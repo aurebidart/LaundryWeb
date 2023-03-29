@@ -1,60 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <title>BURBUJAS Lavanderia</title>
+    <title>Burbujas Lavandería</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-        <header>
-            <h1>Burbujas lavandería</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section class="hero">
-                <h2>Programa tu servicio de lavandería en linea</h2>
-                <form>
-                    <label for="pickup">Fecha de recogida:</label>
-                    <input type="datetime-local" id="pickup" name="pickup">
-                    <label for="delivery">Fecha de entrega:</label>
-                    <input type="datetime-local" name="delivery" id="delivery">
-                    <label for="quantity">Cantidad de ropa</label>
-                    <input type="number" name="quantity" id="quantity">
-                    <label for="type">Tipo de ropa</label>
-                    <select name="type" id="type">
-                        <option value="1">Lavador normal</option>
-                        <option value="2">Lavado deicado</option>
-                        <option value="3">Lavado en seco</option>
-                    </select>
-                    <label for="payment">Forma de pago</label>
-                    <select name="payment" id="payment">
-                        <option value="1">Pago en linea</option>
-                        <option value="2">Pago en efectivo</option>
-                    </select>
-                    <button type="submit">Confirmar pedido</button>
-                </form>
-            </section>
-            <section class="features">
-                <h3>Caracteristicas de Burbujas Lavandería</h3>
-                <ul>
-                    <li>Programación de recogida y entrega</li>
-                    <li>Selección de cantidad y tipo de ropa</li>
-                    <li>Pago en línea o en efectivo</li>
-                    <li>Notificaciones sobre el estado del pedido</li>
-                    <li>Medidas de seguridad para garantizar la privacidad</li>
-                </ul>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2023 Burbujas Lavanderia</p>
-        </footer>
-</body>
+  </head>
+  <body>
+    <header>
+      <h1>Burbujas Lavandería</h1>
+      <div class="botones-principales">
+        <button class="btn btn-azul">Inicio</button>
+        <button class="btn btn-celeste">Servicios</button>
+        <button class="btn btn-azul">Precios</button>
+        <button class="btn btn-celeste">Contacto</button>
+      </div>
+      
+    </header>
+    
+    <main>
+      <section id="banner">
+        <h2>Bienvenido a Burbujas Lavandería</h2>
+        <p>Programa tu servicio de lavandería en línea de manera fácil y rápida</p>
+        <a href="#" class="button">Programa ahora</a>
+      </section>
+      
+      <section id="servicios">
+        <h2>Nuestros servicios</h2>
+        <ul>
+          <li>Programación de recogida y entrega</li>
+          <li>Selección de cantidad y tipo de ropa</li>
+          <li>Pago en línea o en efectivo</li>
+          <li>Notificaciones sobre el estado del pedido</li>
+          <li>Seguridad en el manejo de datos personales y de pago</li>
+        </ul>
+      </section>
+      
+      <section id="precios">
+        <h2>Precios</h2>
+        <p>Los precios varían según la cantidad y el tipo de ropa que desees lavar. Contáctanos para obtener más información.</p>
+        <a href="#" class="button">Contáctanos</a>
+      </section>
+      
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Ponte en contacto con nosotros para cualquier duda o consulta.</p>
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+          
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+          
+          <button type="submit" class="button">Enviar mensaje</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer>
+      <p>© 2023 Burbujas Lavandería. Todos los derechos reservados.</p>
+    </footer>
+  </body>
 </html>
