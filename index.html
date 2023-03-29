@@ -4,31 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>BURBUJAS Lavanderia</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <table>
-            <tr>
-                <th>
-                <div>
-                    <img src="imgs/logo.png" alt="Laundry's logo" width="200px">
-                </div>
-            </th>
-            <th>
-                <button>Home</button>                
-            </th>
-            <th>
-                <button>About</button>                
-            </th>
-            <th>
-                <button>Services</button>                
-            </th>
-            <th>
-                <button>Contact</button>                
-            </th>
-            </tr>
-        </table>
-        <div>
-            <img src="imgs/laundryman.webp" alt="">
-        </div>
+        <header>
+            <h1>Burbujas lavandería</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <h2>Programa tu servicio de lavandería en linea</h2>
+                <form>
+                    <label for="pickup">Fecha de recogida:</label>
+                    <input type="datetime-local" id="pickup" name="pickup">
+                    <label for="delivery">Fecha de entrega:</label>
+                    <input type="datetime-local" name="delivery" id="delivery">
+                    <label for="quantity">Cantidad de ropa</label>
+                    <input type="number" name="quantity" id="quantity">
+                    <label for="type">Tipo de ropa</label>
+                    <select name="type" id="type">
+                        <option value="1">Lavador normal</option>
+                        <option value="2">Lavado deicado</option>
+                        <option value="3">Lavado en seco</option>
+                    </select>
+                    <label for="payment">Forma de pago</label>
+                    <select name="payment" id="payment">
+                        <option value="1">Pago en linea</option>
+                        <option value="2">Pago en efectivo</option>
+                    </select>
+                    <button type="submit">Confirmar pedido</button>
+                </form>
+            </section>
+            <section class="features">
+                <h3>Caracteristicas de Burbujas Lavandería</h3>
+                <ul>
+                    <li>Programación de recogida y entrega</li>
+                    <li>Selección de cantidad y tipo de ropa</li>
+                    <li>Pago en línea o en efectivo</li>
+                    <li>Notificaciones sobre el estado del pedido</li>
+                    <li>Medidas de seguridad para garantizar la privacidad</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Burbujas Lavanderia</p>
+        </footer>
 </body>
 </html>
