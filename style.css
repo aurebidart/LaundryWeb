@@ -1,141 +1,103 @@
-/* Estilo de los botones */
-.btn {
-  border: none;
-  padding: 12px 24px;
-  margin: 0 10px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  color: white;
-  background-color: #8bc8c8;
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 5px;
+  background-image: url(images/background.png);
 }
 
-.btn-principales {
-  display: flex;
-  justify-content: center;
-  position: static;
+button {
+  background-color: cadetblue;
+  border-radius: 8%;
+  cursor: pointer;
+}
+
+/* Set up the basic styles for the header */
+header {
+  position: sticky;
   top: 0;
-  z-index: 1000;
-  background-color: #8bc8c8; /* opcional: agregar color de fondo para que los botones se vean mejor */
-  padding: 10px; /* opcional: agregar un poco de espacio entre los botones y el borde del contenedor */
-  min-height: 60px; /* en lugar de height */
+  background-color: #fff;
+  padding: 10px 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.btn-azul {
-  background-color: #0077b6;
-}
-
-.btn-celeste {
-  background-color: #87CEEB;
-}
-
-/* Estilo de los botones al pasar el cursor */
-button:hover {
-  background-color: #6aa7a7;
-}
-
-/* estilo específico para el botón para enviar un mensaje */
-.stick_right {
-  float: right;
-}
-
-.logo {
-  width: 100px;
-  height: 100px;
+/* Add the logo on the top left corner */
+header .logo {
+  width: 40px;
+  height: 40px;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   margin: 15px;
 }
 
-/* Estilo del fondo de la página */
-body {
-  background-color: #f2f2f2;
-}
-
-/* Estilo del encabezado de la página */
-header {
-  background-color: #8bc8c8;
-  color: white;
-  padding: 20px;
-}
-
-/* Estilo de los títulos */
-h1,
-h2 {
-  color: #333;
-}
-
-/* Estilo de los párrafos */
-p {
-  color: #666;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Estilo del contenedor principal */
-.container {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  margin: 50px auto;
-  max-width: 800px;
-  padding: 30px;
-}
-
-/* Estilo input box */
-input[type=text][type=email] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-}
-
-/* Establecer estilos del footer */
-footer {
-  width: 100%;
-  height: 60px;
-  margin-top: 10px;
-  background-color: #8bc8c8;
-  color: white;
+/* Add the three transparent buttons */
+header .nav {
   display: flex;
+  flex-grow: 1;
   justify-content: center;
-  align-items: center;
 }
 
+header .nav button {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 10px;
+  font-size: 16px;
+}
 
-/* Bubble animation */
-.bubble {
+/* Add the Sign up and Sign in buttons on the top right corner */
+header .cta-buttons {
+  display: flex;
+}
+
+header .cta-buttons button {
+
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+main {
+  margin-left: 30px;
+}
+
+main .titles {
+  margin-top: 10%;
+}
+
+main h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+main .big {
+  margin-bottom: 20px;
+}
+
+main .main-buttons button {
+  margin-top: 50px;
+  color: black;
+  background-color: #fff;
+  border: cadetblue 1px solid;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+ main .main-buttons .blue {
+  background-color: cadetblue;
+  color: #fff;
+}
+
+footer {
   position: absolute;
-  background-color: rgba(199, 237, 240, 0.6);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  animation-name: bubble;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes bubble {
-  0% {
-    bottom: -20px;
-    opacity: 0;
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(2);
-    opacity: 1;
-  }
-  100% {
-    bottom: 100%;
-    opacity: 0;
-    transform: scale(3);
-  }
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(156, 169, 190);
+  opacity: 0.7;
 }
