@@ -1,14 +1,35 @@
 /* Estilo de los botones */
-button {
-  background-color: #8bc8c8;
+.btn {
   border: none;
-  border-radius: 25px;
-  color: white;
-  cursor: pointer;
+  padding: 12px 24px;
+  margin: 0 10px;
   font-size: 18px;
-  padding: 12px 20px;
+  font-weight: bold;
   text-align: center;
-  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  background-color: #8bc8c8;
+}
+
+.btn-principales {
+  display: flex;
+  justify-content: center;
+  position: static;
+  top: 0;
+  z-index: 1000;
+  background-color: #8bc8c8; /* opcional: agregar color de fondo para que los botones se vean mejor */
+  padding: 10px; /* opcional: agregar un poco de espacio entre los botones y el borde del contenedor */
+  min-height: 60px; /* en lugar de height */
+}
+
+.btn-azul {
+  background-color: #0077b6;
+}
+
+.btn-celeste {
+  background-color: #87CEEB;
 }
 
 /* Estilo de los botones al pasar el cursor */
@@ -17,7 +38,7 @@ button:hover {
 }
 
 /* estilo específico para el botón para enviar un mensaje */
-.send_message {
+.stick_right {
   float: right;
 }
 
@@ -65,6 +86,17 @@ p {
   padding: 30px;
 }
 
+/* Estilo input box */
+input[type=text][type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
 /* Establecer estilos del footer */
 footer {
   width: 100%;
@@ -77,41 +109,8 @@ footer {
   align-items: center;
 }
 
-.botones-principales {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.btn {
-  border: none;
-  padding: 12px 24px;
-  margin: 0 10px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  color: white;
-}
-
-.btn-azul {
-  background-color: #0077b6;
-}
-
-.btn-celeste {
-  background-color: #87CEEB;
-}
-
-.send_message {
-  float: right;
-  color: #333;
-}
-
 
 /* Bubble animation */
-
 .bubble {
   position: absolute;
   background-color: rgba(199, 237, 240, 0.6);
