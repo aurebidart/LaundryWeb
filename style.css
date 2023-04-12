@@ -49,6 +49,10 @@ header .nav button {
   font-size: 16px;
 }
 
+header .nav button:hover {
+  background-color: #ebebeb;
+}
+
 /* Add the Sign up and Sign in buttons on the top right corner */
 header .cta-buttons {
   display: flex;
