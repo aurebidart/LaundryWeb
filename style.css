@@ -105,3 +105,10 @@ footer {
   background-color: rgb(156, 169, 190);
   opacity: 0.7;
 }
+
+@media screen and (max-width: 800px) {
+  /* header y sus hijos */
+  header{
+    flex-direction: column;
+  }
+}
