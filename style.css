@@ -90,7 +90,8 @@ main .main-buttons button {
   padding: 10px 15px;
   font-size: 16px;
 }
- main .main-buttons .blue {
+
+main .main-buttons .blue {
   background-color: #0d6efd;
   color: #fff;
 }
@@ -110,9 +111,13 @@ footer {
 
 .left {
   width: 50%;
-  height: 100%;
+  height: 70%;
   position: absolute;
-  left: 0;
+  left: 2%;
+  top: 12%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .right {
@@ -126,13 +131,11 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  position: absolute;
   width: 90%;
   max-width: 400px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  padding: 20px;
+  left: 20%;
 }
 
 .form label {
