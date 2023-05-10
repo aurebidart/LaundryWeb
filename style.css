@@ -1,19 +1,8 @@
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin: 5px;
   background-image: url(images/background.png);
 }
 
-button {
-  background-color: #0d6efd;
-  border-radius: 8%;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 /* Set up the basic styles for the header */
 header {
