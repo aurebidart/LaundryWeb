@@ -4,44 +4,76 @@
 <head>
   <meta charset="UTF-8">
   <title>Burbujas Lavandería</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../style.css">
   <link rel="shortcut icon" href="../images/logo.png">
+  <style>
+    .titles {
+      text-align: left;
+    }
+
+    main {
+      margin-top: 80px; /* Ajusta el valor del margen según sea necesario */
+    }
+  </style>
 </head>
 
 <body>
-  
+
   <header>
-    <!--<img class="logo" src="images/logo.png" alt="Logo">-->
-    <nav class="nav">
-      <button>
-        <a href="index.html">Home</a>
-     </button>
-      <button>Services</button>
-      <button>Contact</button>
-    </nav>
-    <div class="cta-buttons">
-      <button>
-        <a href="login.html">Empleado</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
+      <a class="navbar-brand" href="index.html">Burbujas Lavandería</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Empleado</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
 
   <main>
-    <div class="titles">
-      <h1 class="big">Burbujas Lanvanderia</h1>
-      <h2>Lava tu ropa desde tu casa</h2>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="titles">
+            <h1 class="display-4">Burbujas Lavandería</h1>
+            <h2>Lava tu ropa desde tu casa</h2>
+          </div>
 
-    <div class="main-buttons">
-      <button class="blue">Lavar mi ropa</button>
-      <button>Seguir mi ropa</button>
+          <div class="mt-4">
+            <a href="#" class="btn btn-primary btn-lg mr-2">Lavar mi ropa</a>
+            <a href="#" class="btn btn-secondary btn-lg">Seguir mi ropa</a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
-  <footer>
-    <p>© 2023 Burbujas Lavandería. Todos los derechos reservados.</p>
+  <footer class="mt-4">
+    <div class="container">
+      <p>© 2023 Burbujas Lavandería. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
