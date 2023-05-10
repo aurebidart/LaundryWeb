@@ -7,10 +7,31 @@ body {
   margin-left: 15%; /* Mover la lista a la derecha */
 }
 
-.btn-secondary {
-  background-color: #fff; /* Color de fondo blanco */
-  color: #343a40; /* Color de texto */
+.btn {
   border: 1px solid #343a40; /* Borde gris oscuro */
+  border-radius: 40px; /* Bordes redondeados */
+}
+
+.btn-primary {
+  background-color: #87CEFA;
+  border-color: #87CEFA;
+}
+
+.btn-primary:hover {
+  background-color: #6495ED;
+  border-color: #6495ED;
+}
+
+.btn-secondary {
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
+  color: #212529;
+}
+
+.btn-secondary:hover {
+  background-color: #E0E0E0;
+  border-color: #E0E0E0;
+  color: #212529;
 }
 
 footer {
@@ -30,4 +51,8 @@ footer {
 
 .main-body {
   flex: 1;
+}
+
+.forgot-password {
+  margin-right: 10px;
 }
