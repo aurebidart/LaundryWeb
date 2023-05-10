@@ -40,7 +40,7 @@ footer {
   background: rgba(0, 0, 0, 0.1);
   margin: auto;
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
 
