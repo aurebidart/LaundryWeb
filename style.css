@@ -1,6 +1,7 @@
 body {
   background-image: url("../images/background.png");
   background-color: #fff; /* Color de fondo */
+  min-height: 100%;
 }
 
 .navbar-nav {
@@ -40,8 +41,9 @@ footer {
   background: rgba(0, 0, 0, 0.1);
   margin: auto;
   width: 100%;
-  position: relative;
+  position: absolute;
   bottom: 0;
+  left: 0;
 }
 
 .main-content {
