@@ -8,6 +8,10 @@ body {
   margin-left: 15%; /* Mover la lista a la derecha */
 }
 
+.navbar-text {
+  font-size: 22px;
+}
+
 .btn {
   border: 1px solid #343a40; /* Borde gris oscuro */
   border-radius: 40px; /* Bordes redondeados */
@@ -39,6 +43,7 @@ body {
 footer {
   /*Color de fondo gris claro y transparencia */
   background: rgba(0, 0, 0, 0.1);
+  /* Posición fija abajo a la izquierda */
   margin: auto;
   width: 100%;
   position: absolute;
@@ -61,7 +66,7 @@ footer {
 
 /* Lavar mi ropa*/
 .total-price {
-  position: fixed;
+  position: relative;
   bottom: 10px;
   right: 10px;
   font-weight: bold;
