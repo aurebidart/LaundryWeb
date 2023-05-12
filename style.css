@@ -75,3 +75,32 @@ footer {
 .form-group label {
   font-weight: bold;
 }
+
+
+
+
+
+.dance-container {
+  position: relative;
+  height: 300px;
+}
+
+.duck {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 160px;
+  height: 190px;
+  background-image: url('images/duck.gif');
+  background-size: cover;
+}
+
+.confirmation-duck {
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  width: 160px;
+  height: 190px;
+  background-image: url('images/confirmation_duck.gif');
+  background-size: cover;
+}
