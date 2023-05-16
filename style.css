@@ -1,12 +1,15 @@
 body {
   background-image: url("../images/background.png");
-  background-color: #fff; /* Color de fondo */
-  font-family: 'Lato', sans-serif; /* Fuente del texto */
+  background-color: #fff;
+  /* Color de fondo */
+  font-family: 'Lato', sans-serif;
+  /* Fuente del texto */
   min-height: 100%;
 }
 
 .navbar-nav {
-  margin-left: 15%; /* Mover la lista a la derecha */
+  margin-left: 15%;
+  /* Mover la lista a la derecha */
 }
 
 .navbar-text {
@@ -14,8 +17,10 @@ body {
 }
 
 .btn {
-  border: 1px solid #343a40; /* Borde gris oscuro */
-  border-radius: 40px; /* Bordes redondeados */
+  border: 1px solid #343a40;
+  /* Borde gris oscuro */
+  border-radius: 40px;
+  /* Bordes redondeados */
 }
 
 .btn-primary {
@@ -53,7 +58,8 @@ footer {
 }
 
 .main-content {
-  min-height: calc(100vh - 100px); /* Calcula la altura mínima */
+  min-height: calc(100vh - 100px);
+  /* Calcula la altura mínima */
   display: flex;
   flex-direction: column;
 }
@@ -96,10 +102,17 @@ footer {
   position: absolute;
   width: calc(100% - 2rem);
   height: 2px;
-  background-color: black;
+  background-color: #87CEFA;
   top: 20%;
   left: calc(52% + 1rem);
 }
+
+
+.circle.completed {
+  background-color: green;
+}
+
+
 
 
 

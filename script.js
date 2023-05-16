@@ -1,28 +1,31 @@
 
 function updateProgress(state) {
-    let progressBar = document.getElementById("progress-bar");
+    var circle1 = document.getElementById("circle1");
+    var circle2 = document.getElementById("circle2");
+    var circle3 = document.getElementById("circle3");
+    var circle4 = document.getElementById("circle4");
+    var circle5 = document.getElementById("circle5");
     let currentState = document.getElementById("current-state");
-    let width = 0;
 
-    if (state === "Ropa recogida") {
-        width = 20;
-    } else if (state === "Limpiando") {
-        width = 40;
-    } else if (state === "Secando") {
-        width = 60;
-    } else if (state === "Planchando") {
-        width = 80;
-    } else if (state === "Ropa entregada") {
-        width = 100;
+    switch (state) {
+        case "entregada":
+            circle5.classList.add("completed");
+        case "planchando":
+            circle4.classList.add("completed");
+        case "secando":
+            circle3.classList.add("completed");
+        case "lavando":
+            circle2.classList.add("completed");
+        case "recogida":
+            circle1.classList.add("completed");
+        default:
+            break;
     }
 
-    progressBar.style.width = width + "%";
-    progressBar.setAttribute("aria-valuenow", width);
-    progressBar.innerHTML = width + "%";
 
     currentState.textContent = state;
 }
 
 // Call the function with the desired state
-updateProgress("Planchando");
+updateProgress("planchando");
 
