@@ -1,0 +1,76 @@
+body {
+    background-image: url("../images/background.png");
+    background-color: #fff;
+    /* Color de fondo */
+    font-family: 'Lato', sans-serif;
+    /* Fuente del texto */
+    min-height: 100%;
+  }
+  
+  .navbar-nav {
+    margin-left: 15%;
+    /* Mover la lista a la derecha */
+  }
+  
+  .navbar-text {
+    font-size: 22px;
+  }
+  
+  .btn {
+    border: 1px solid #343a40;
+    /* Borde gris oscuro */
+    border-radius: 40px;
+    /* Bordes redondeados */
+  }
+  
+  .btn-primary {
+    background-color: #87CEFA;
+    border-color: #87CEFA;
+    font-size: 20px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #6495ED;
+    border-color: #6495ED;
+  }
+  
+  footer {
+    /*Color de fondo gris claro y transparencia */
+    background: rgba(0, 0, 0, 0.1);
+    /* Posición fija abajo a la izquierda */
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .main-content {
+    min-height: calc(100vh - 100px);
+    /* Calcula la altura mínima */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-body {
+    flex: 1;
+  }
+
+.table {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-striped tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.tasks .table-responsive {
+    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: scroll;
+}
+  
