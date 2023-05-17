@@ -15,67 +15,74 @@
 
     <header>
         <div class="container px-0">
-          <nav class="navbar navbar-expand-md navbar-light bg-light mx-auto">
-            <button class="navbar-toggler sm-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a class="nav-link navbar-text mr-3" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link navbar-text mr-3" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link navbar-text mr-3" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link navbar-text" href="login.html">Empleado</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+            <nav class="navbar navbar-expand-md navbar-light bg-light mx-auto">
+                <button class="navbar-toggler sm-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link navbar-text mr-3" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-text mr-3" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-text mr-3" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-text" href="login.html">Empleado</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-      </header>
+    </header>
 
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <h1 class="mt-5">Seguir mi ropa</h1>
-                    <p class="mt-3">Número de pedido: 12345</p>
+                    <form class="mt-3">
+                        <div class="form-group">
+                            <label for="numberInput">Número de pedido:</label>
+                            <input type="number" class="form-control" id="numberPedido" placeholder="12345">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="handleBuscarPedido()">Buscar</button>
+                    </form>
                 </div>
-                <div class="col-md-6 my-5">
-                    <h3 id="current-state" class="mt-5"></h3>
-                </div>
-            </div>
-            <div class="circulo">
-                <div class="row d-flex justify-content-center">
-                    <div class="col text-center with-bar">
-                        <div class="circle" id="circle1"></div>
-                        <p class="mt-3">Ropa recogida</p>
-                    </div>
-                    <div class="col text-center with-bar">
-                        <div class="circle" id="circle2"></div>
-                        <p class="mt-3">Lavando</p>
-                    </div>
-                    <div class="col text-center with-bar">
-                        <div class="circle" id="circle3"></div>
-                        <p class="mt-3">Secando</p>
-                    </div>
-                    <div class="col text-center with-bar">
-                        <div class="circle" id="circle4"></div>
-                        <p class="mt-3">Planchando</p>
-                    </div>
-                    <div class="col text-center">
-                        <div class="circle" id="circle5"></div>
-                        <p class="mt-3">Ropa entregada</p>
-                    </div>
+                <div class="col-md-5 d-flex justify-content-center align-items-center mt-5">
+                    <h3 id="current-state" class="capitalize-first mt-5" style="display: none;"></h3>
                 </div>
             </div>
-            
+            <div class="row mt-5">
+                <div class="col circulo" id="progress-container" style="display: none;">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col text-center with-bar">
+                            <div class="circle" id="circle1"></div>
+                            <p class="mt-3">Ropa recogida</p>
+                        </div>
+                        <div class="col text-center with-bar">
+                            <div class="circle" id="circle2"></div>
+                            <p class="mt-3">Lavando</p>
+                        </div>
+                        <div class="col text-center with-bar">
+                            <div class="circle" id="circle3"></div>
+                            <p class="mt-3">Secando</p>
+                        </div>
+                        <div class="col text-center with-bar">
+                            <div class="circle" id="circle4"></div>
+                            <p class="mt-3">Planchando</p>
+                        </div>
+                        <div class="col text-center">
+                            <div class="circle" id="circle5"></div>
+                            <p class="mt-3">Ropa entregada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

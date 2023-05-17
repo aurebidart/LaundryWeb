@@ -112,6 +112,10 @@ footer {
   background-color: green;
 }
 
+.capitalize-first {
+  text-transform: capitalize;
+}
+
 
 
 

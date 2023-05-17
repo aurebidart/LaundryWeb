@@ -6,6 +6,7 @@ function updateProgress(state) {
     var circle4 = document.getElementById("circle4");
     var circle5 = document.getElementById("circle5");
     let currentState = document.getElementById("current-state");
+    var progressContainer = document.getElementById("progress-container");
 
     switch (state) {
         case "entregada":
@@ -24,8 +25,24 @@ function updateProgress(state) {
 
 
     currentState.textContent = state;
+
+    // Show the elements
+    progressContainer.style.display = "block";
+    currentState.style.display = "block";
 }
 
-// Call the function with the desired state
-updateProgress("planchando");
+function handleBuscarPedido() {
 
+    // Get the pedido number entered by the user
+    var pedidoNumber = document.getElementById("numberPedido").value;
+
+    // Display the progress bar based on the pedido number
+    searchPedido(pedidoNumber);
+}
+
+function searchPedido(pedidoNumber) {
+    // Logica del backend
+
+    updateProgress("planchando");
+
+}
