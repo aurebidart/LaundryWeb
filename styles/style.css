@@ -88,6 +88,10 @@ footer {
   font-weight: bold;
 }
 
+.capitalize-first{
+  text-transform: capitalize;
+}
+
 .circle {
   width: 50px;
   height: 50px;
@@ -107,17 +111,9 @@ footer {
   left: calc(52% + 1rem);
 }
 
-
 .circle.completed {
   background-color: green;
 }
-
-
-
-
-
-
-
 
 .dance-container {
   position: relative;
@@ -130,6 +126,6 @@ footer {
   right: 0;
   width: 160px;
   height: 190px;
-  background-image: url('images/duck.gif');
+  background-image: url('../images/duck.png');
   background-size: cover;
 }
