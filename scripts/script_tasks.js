@@ -60,7 +60,6 @@ function changeTab(index) {
         const tableBody = document.getElementById('task_table_body');
         tableBody.innerHTML = '';
         orders.forEach(task => {
-            if (task.status !== index) return;
             const row = document.createElement('tr');
             row.classList.add('task');
             switch (index) {
@@ -113,4 +112,31 @@ function changeTab(index) {
     .catch(error => {
         console.log('Error fetching data:', error);
     });
+}
+
+async function changeStatus() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var actual_tab = 0;
+    const promises = Array.from(checkboxes).map(checkbox => {
+        const id = checkbox.id;
+        return fetch(`http://localhost:3000/orders/${id}`)
+        .then(response => response.json())
+        .then(order => {
+            actual_tab = order.status;
+            order.status++;
+            return fetch(`http://localhost:3000/orders/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(order)
+            });
+        })
+        .catch(error => {
+            console.log('Error fetching data:', error);
+        });
+    });
+
+    await Promise.all(promises);
+    changeTab(actual_tab);
 }
