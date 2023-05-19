@@ -21,11 +21,12 @@
   ],
   "orders": [
     {
-      "id": 11,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
+      "id": 1,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
       "wash_type": "Lavado en seco",
-      "comment": "Hola",
+      "comment": "Lavado de prueba",
       "collection_date": "2023-9-10",
       "collection_time": "10:00",
       "collection_address": "Calle 1 # 1-1",
@@ -36,166 +37,125 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 4,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
+      "status": 2,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
       }
     },
     {
       "id": 2,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
       "wash_type": "Lavado en seco",
-      "comment": "Hola",
-      "collection_date": "2022-9-10",
-      "collection_time": "10:00",
-      "collection_address": "Calle 1 # 1-1",
-      "delivery_address": "Calle 1 # 1-1",
-      "delivery_date": "2023-10-12",
-      "delivery_time": "10:00",
-      "payment_method": "Efectivo",
-      "phone": "123456789",
-      "email": "asdfghjkl@gmail.com",
-      "price": "10000",
-      "status": 3,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
-      }
-    },
-    {
-      "id": 3,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
-      "wash_type": "Lavado en seco",
-      "comment": "Hola",
-      "collection_date": "2023-9-10",
-      "collection_time": "10:00",
-      "collection_address": "Calle 1 # 1-1",
-      "delivery_address": "Calle 1 # 1-1",
-      "delivery_date": "2023-10-15",
-      "delivery_time": "10:00",
-      "payment_method": "Efectivo",
-      "phone": "123456789",
-      "email": "asdfghjkl@gmail.com",
-      "price": "10000",
-      "status": 2,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
-      }
-    },
-    {
-      "id": 1,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
-      "wash_type": "Lavado en seco",
-      "comment": "Hola",
-      "collection_date": "2023-9-10",
-      "collection_time": "10:00",
-      "collection_address": "Calle 1 # 1-1",
-      "delivery_address": "Calle 1 # 1-1",
-      "delivery_date": "2023-11-10",
-      "delivery_time": "10:00",
-      "payment_method": "Efectivo",
-      "phone": "123456789",
-      "email": "asdfghjkl@gmail.com",
-      "price": "10000",
-      "status": 3,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
-      }
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
-      "wash_type": "Lavado en seco",
-      "comment": "Hola",
+      "comment": "Lavado de prueba",
       "collection_date": "2023-9-10",
       "collection_time": "10:00",
       "collection_address": "Calle 1 # 1-1",
       "delivery_address": "Calle 1 # 1-1",
       "delivery_date": "2023-10-10",
-      "delivery_time": "09:00",
-      "payment_method": "Efectivo",
-      "phone": "123456789",
-      "email": "asdfghjkl@gmail.com",
-      "price": "10000",
-      "status": 3,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
-      }
-    },
-    {
-      "id": 6,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
-      "wash_type": "Lavado en seco",
-      "comment": "Hola",
-      "collection_date": "2024-9-10",
-      "collection_time": "10:00",
-      "collection_address": "Calle 1 # 1-1",
-      "delivery_address": "Calle 1 # 1-1",
-      "delivery_date": "2026-10-10",
       "delivery_time": "10:00",
       "payment_method": "Efectivo",
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 2,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
+      "status": 5,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
       }
     },
     {
-      "id": 7,
-      "quantity": "1-5 piezas",
-      "clothe_type": "Camisas",
+      "id": 3,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
       "wash_type": "Lavado en seco",
-      "comment": "Hola",
+      "comment": "Lavado de prueba",
       "collection_date": "2023-9-10",
       "collection_time": "10:00",
       "collection_address": "Calle 1 # 1-1",
       "delivery_address": "Calle 1 # 1-1",
-      "delivery_date": "2023-03-10",
+      "delivery_date": "2023-10-10",
       "delivery_time": "10:00",
       "payment_method": "Efectivo",
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 3,
-      "employee": {
-        "collection": 1,
-        "wash": 1,
-        "dry": 2,
-        "iron": 3,
-        "delivery": 1
+      "status": 1,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
       }
     }
   ]
