@@ -46,19 +46,17 @@
                 <div class="form-group">
                   <label for="numeroEmpleado">Número de empleado</label>
                   <input type="text" class="form-control" id="numeroEmpleado">
-                </div>
-                <div class="form-group">
-                  <label for="password">Contraseña</label>
+                  <label class="mt-4" for="password">Contraseña</label>
                   <input type="password" class="form-control" id="password">
-                </div>
-                <div class="form-check mb-3">
+                <div class="form-check mt-3">
                   <input type="checkbox" class="form-check-input" id="recuerdame">
                   <label class="form-check-label" for="recuerdame">Recuérdame</label>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <a class="forgot-password" href="password.html">¿Olvidaste tu contraseña?</a>
-                  <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                  <button class="btn btn-primary" onclick="loginVerification()">Iniciar sesión</button>
                 </div>
+              </div>
               </form>
             </div>
           </div>
@@ -70,9 +68,6 @@
           <p>© 2023 Burbujas Lavandería. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com"></script>
+    <script src="../scripts/login_script.js"></script>
     </body>
 </html>
