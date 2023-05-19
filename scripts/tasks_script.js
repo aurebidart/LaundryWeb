@@ -65,7 +65,7 @@ function changeTab(index) {
             switch (index) {
                 case 0:
                     row.innerHTML = `
-                    <td><input type="checkbox" name="done" id="done"></td>
+                    <td><input type="checkbox" name="done" id=${task.id}></td>
                     <td>${task.id}</td>
                     <td>${task.collection_address}</td>
                     <td>${task.collection_date}</td>
@@ -86,7 +86,7 @@ function changeTab(index) {
                     break;
                 case 3:
                     row.innerHTML = `
-                    <td><input type="checkbox" name="done" id="done"></td>
+                    <td><input type="checkbox" name="done" id=${task.id}></td>
                     <td>${task.id}</td>
                     <td>${task.clothe_type}</td>
                     <td>${task.quantity}</td>
@@ -96,7 +96,7 @@ function changeTab(index) {
                     break;
                 case 4:
                     row.innerHTML = `
-                    <td><input type="checkbox" name="done" id="done"></td>
+                    <td><input type="checkbox" name="done" id=${task.id}></td>
                     <td>${task.id}</td>
                     <td>${task.collection_address}</td>
                     <td>${task.quantity}</td>
