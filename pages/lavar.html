@@ -29,7 +29,7 @@
                             <a class="nav-link navbar-text mr-3" href="#">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link navbar-text mr-3" href="#">Contact</a>
+                            <a class="nav-link navbar-text mr-3" href="contacto.html">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link navbar-text" href="login.html">Empleado</a>
@@ -65,19 +65,20 @@
                             <label>Medir por:</label><br>
                             <div class="form-check-inline">
                                 <div class="form-check ">
-                                <input class="form-check-input" type="radio" name="medida" id="radioPeso" value="1">
-                                <label class="form-check-label" for="radioPeso">Peso (Kg)</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="medida" id="radioUnidades" value="2">
-                                <label class="form-check-label" for="radioUnidades">Unidades</label>
-                            </div>
+                                    <input class="form-check-input" type="radio" name="medida" id="radioPeso" value="1">
+                                    <label class="form-check-label" for="radioPeso">Peso (Kg)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="medida" id="radioUnidades"
+                                        value="2">
+                                    <label class="form-check-label" for="radioUnidades">Unidades</label>
+                                </div>
                                 <input class="ml-3" type="number" name="cantidad" id="cantidad">
                             </div>
-                        <div class="error">
-                            <span id="medidaError"></span>
-                            <span class="ml-5" id="cantidadError"></span>
-                        </div>
+                            <div class="error">
+                                <span id="medidaError"></span>
+                                <span class="ml-5" id="cantidadError"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -98,7 +99,8 @@
                         <div class="form-group">
                             <label for="direccion_recogida">Direccion de recogida:</label><br>
                             <input type="text" class="form-control" id="direccion_recogida">
-                            <input type="checkbox" name="sameAddress" id="sameAddress" checked onclick="toggleDireccionEntrega()">
+                            <input type="checkbox" name="sameAddress" id="sameAddress" checked
+                                onclick="toggleDireccionEntrega()">
                             <label for="sameAddress">La direccion de recogida y entrega son la misma</label>
                             <div class="error">
                                 <span id="direccionRecogidaError"></span>
