@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Burbujas Lavandería</title>
@@ -9,53 +10,55 @@
     <link rel="stylesheet" href="../styles/tasks_style.css">
     <script src="../scripts/tasks_script.js "></script>
 </head>
-<body>
-<header>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Burbujas Lavandería</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="tasks.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.html">Administración</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
 
-<main>
-    <div class="container">
-        <div class="text-center mt-5">
-            <h1 class="hi@user"></h1>
-        </div>
-        <div class="tasks_types">
-            <div class="tab active" onclick="changeTab(0)">Recoger</div>
-            <div class="tab" onclick="changeTab(1)">Lavar</div>
-            <div class="tab" onclick="changeTab(2)">Secar</div>
-            <div class="tab" onclick="changeTab(3)">Planchar y doblar</div>
-            <div class="tab" onclick="changeTab(4)">Entregar</div>
-        </div>
-        <div class="row justify-content-center mt-5">
-            <div class="tasks table-responsive">
-                <table class="tasks_table table table-striped text-center">
-                    <thead id="task_table_head"></thead>
-                    <tbody id="task_table_body"></tbody>
-            </table>
-        </div>
-        <div class="text-center row mt-4">
-            <button class="btn btn-primary" onclick="changeStatus()">¡Listo!</button>
-        </div>
-        
-    </div>
-</main>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Burbujas Lavandería</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="tasks.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Administración</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="text-center mt-5">
+                <h1 class="hi@user"></h1>
+            </div>
+            <div class="tasks_types">
+                <div class="tab active" onclick="changeTab(0)">Recoger</div>
+                <div class="tab" onclick="changeTab(1)">Lavar</div>
+                <div class="tab" onclick="changeTab(2)">Secar</div>
+                <div class="tab" onclick="changeTab(3)">Planchar y doblar</div>
+                <div class="tab" onclick="changeTab(4)">Entregar</div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="tasks table-responsive">
+                    <table class="tasks_table table table-striped text-center">
+                        <thead id="task_table_head"></thead>
+                        <tbody id="task_table_body"></tbody>
+                    </table>
+                </div>
+                <div class="text-center row mt-4">
+                    <button class="btn btn-primary" onclick="changeStatus()">¡Listo!</button>
+                </div>
+
+            </div>
+    </main>
 </body>
+
 </html>
