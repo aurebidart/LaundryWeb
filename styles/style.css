@@ -115,6 +115,8 @@ footer {
   background-color: green;
 }
 
+/* Duck */
+
 .dance-container {
   position: relative;
   height: 300px;
@@ -130,6 +132,15 @@ footer {
   background-size: cover;
 }
 
+.confirmation-duck {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 160px;
+  height: 190px;
+  background-image: url('../images/confirmation_duck.gif');
+  background-size: cover;
+}
 
 form {
   padding: 3% 5%;
