@@ -148,6 +148,7 @@ function validateForm() {
   if (!error) {
     //crear json
 
+    // TODO Sacar esto de aca y hacerlo en una funcion a parte
     //obtener precio
     var price = 0;
     if (medida[0].checked) {  //si es por kilo
@@ -155,7 +156,7 @@ function validateForm() {
     } else {  //si es por pieza
       price = cantidad * 1;
     }
-    
+
     var fechaInicio = new Date(document.getElementById('hora_recogida').value);
     var fechaFin = new Date(document.getElementById('hora_entrega').value);
     json = {

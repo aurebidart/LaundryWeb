@@ -37,7 +37,7 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 5,
+      "status": 0,
       "tasks": {
         "collection": {
           "employee": 1,

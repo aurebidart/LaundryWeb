@@ -1,0 +1,43 @@
+body {
+    background-image: url("../images/background.png");
+    background-color: #fff;
+    /* Color de fondo */
+    font-family: 'Lato', sans-serif;
+    /* Fuente del texto */
+    min-height: 100%;
+}
+
+.navbar-nav {
+    margin-left: 15%;
+}
+
+.navbar-text {
+    font-size: 22px;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.main-content {
+    min-height: calc(100vh - 100px);
+    /* Calcula la altura mínima */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body {
+    flex: 1;
+}
+
+section {
+    padding: 2% 3%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 2%;
+}
