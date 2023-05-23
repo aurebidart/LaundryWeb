@@ -37,7 +37,7 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 0,
+      "status": 1,
       "tasks": {
         "collection": {
           "employee": 1,
@@ -83,7 +83,7 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 2,
+      "status": 1,
       "tasks": {
         "collection": {
           "employee": 1,
@@ -173,6 +173,142 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
+      "status": 1,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 0,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 5,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 1,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 1,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
       "status": 5,
       "collection": {
         "employee": 1,
@@ -196,6 +332,770 @@
       },
       "delivery": {
         "employee": 1,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 8,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 1,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 0,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 9,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 1,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 5,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 12,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 0,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 13,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 5,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 16,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 0,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 17,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 5,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 20,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 0,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 21,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "tasks": {
+        "collection": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "10:00"
+        },
+        "wash": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "11:00"
+        },
+        "dry": {
+          "employee": 2,
+          "date": "2023-9-10",
+          "time": "12:00"
+        },
+        "iron": {
+          "employee": 3,
+          "date": "2023-9-10",
+          "time": "14:00"
+        },
+        "delivery": {
+          "employee": 1,
+          "date": "2023-9-10",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": 23,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 5,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "15:00"
+      }
+    },
+    {
+      "id": 24,
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "sabana",
+      "wash_type": "Lavado en seco",
+      "comment": "Lavado de prueba",
+      "collection_date": "2023-9-10",
+      "collection_time": "10:00",
+      "collection_address": "Calle 1 # 1-1",
+      "delivery_address": "Calle 1 # 1-1",
+      "delivery_date": "2023-10-10",
+      "delivery_time": "10:00",
+      "payment_method": "Efectivo",
+      "phone": "123456789",
+      "email": "asdfghjkl@gmail.com",
+      "price": "10000",
+      "status": 0,
+      "collection": {
+        "employee": 1,
+        "date": "2023-9-10",
+        "time": "10:00"
+      },
+      "wash": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "11:00"
+      },
+      "dry": {
+        "employee": 2,
+        "date": "2023-9-10",
+        "time": "12:00"
+      },
+      "iron": {
+        "employee": 3,
+        "date": "2023-9-10",
+        "time": "14:00"
+      },
+      "delivery": {
+        "employee": 0,
         "date": "2023-9-10",
         "time": "15:00"
       }

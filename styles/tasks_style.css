@@ -69,7 +69,7 @@ body {
     cursor: pointer;
 }
 
-.tasks .table-responsive {
+.table-responsive {
     max-height: 60vh;
     overflow-y: scroll;
 }
