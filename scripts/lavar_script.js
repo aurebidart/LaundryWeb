@@ -1,34 +1,43 @@
 function validarFechas() {
+  // Obtener las fechas del formulario
   var fechaInicio = new Date(document.getElementById('hora_recogida').value);
   var fechaFin = new Date(document.getElementById('hora_entrega').value);
+
+  // Obtener los errores
+  var fechaInicioError = document.getElementById('fechaRecogidaError');
+  var fechaFinError = document.getElementById('fechaEntregaError');
 
   // Validación de fechas
   // Debio haberse hecho con un input de tipo date, pero no se pudo por problemas de compatibilidad
   if (fechaInicio == 'Invalid Date') {
-    var fechaInicioError = document.getElementById('fechaRecogidaError');
     fechaInicioError.innerHTML = 'Introduzca una fecha de recogida';
     return false;
+  } else {
+    fechaInicioError.innerHTML = '';
   }
   if (fechaFin == 'Invalid Date') {
-    var fechaFinError = document.getElementById('fechaEntregaError');
     fechaFinError.innerHTML = 'Introduzca una fecha de entrega';
     return false;
+  } else {
+    fechaFinError.innerHTML = '';
   }
 
   var now = new Date();
   var fechaMinima = new Date(now.getTime() + 15 * 60000);
 
   if (fechaInicio < fechaMinima) {
-    var fechaInicioError = document.getElementById('fechaRecogidaError');
     fechaInicioError.innerHTML = 'La fecha de recogida debe ser al menos 15 minutos después de la fecha actual';
     return false;
+  } else {
+    fechaInicioError.innerHTML = '';
   }
 
   var tiempoDeLavado = new Date(fechaInicio.getTime() + 7 * 3600000);
   if (fechaFin <= tiempoDeLavado) {
-    var fechaFinError = document.getElementById('fechaEntregaError');
     fechaFinError.innerHTML = 'La fecha de entrega debe ser al menos 7 horas después de la fecha de recogida';
     return false;
+  } else {
+    fechaFinError.innerHTML = '';
   }
 
   var diaInicio = fechaInicio.getDay();
@@ -38,14 +47,17 @@ function validarFechas() {
 
   // Validación de horarios
   if (horaInicio < 8 || horaInicio >= 20) {    // Lunes a viernes, fuera de horario
-    var horaInicioError = document.getElementById('fechaRecogidaError');
-    horaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
+    fechaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
     return false;
+  } else {
+    fechaInicioError.innerHTML = '';
   }
+
   if (diaInicio === 6 && (horaInicio < 8 || horaInicio >= 14)) { // Sábado, fuera de horario
-    var horaInicioError = document.getElementById('fechaRecogidaError');
-    horaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 14:00 los sábados ->';
+    fechaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 14:00 los sábados ->';
     return false;
+  } else {
+    fechaInicioError.innerHTML = '';
   }
   if (horaFin < 8 || horaFin >= 20) {    // Lunes a viernes, fuera de horario
     var horaFinError = document.getElementById('fechaEntregaError');
@@ -53,95 +65,110 @@ function validarFechas() {
     return false;
   }
   if (diaFin === 6 && (horaFin < 8 || horaFin >= 14)) { // Sábado, fuera de horario
-    var horaFinError = document.getElementById('fechaEntregaError');
-    horaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 14:00 los sábados ->';
+    fechaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 14:00 los sábados ->';
     return false;
+  } else {
+    fechaFinError.innerHTML = '';
   }
   if (diaInicio === 0) { // Domingo
-    var diaInicioError = document.getElementById('fechaRecogidaError');
-    diaInicioError.innerHTML = 'No se puede recoger los domingos';
+    fechaInicioError.innerHTML = 'No se puede recoger los domingos';
     return false;
+  } else {
+    fechaInicioError.innerHTML = '';
   }
   if (diaFin === 0) { // Domingo
-    var diaFinError = document.getElementById('fechaEntregaError');
-    diaFinError.innerHTML = 'No se puede entregar los domingos';
+    fechaFinError.innerHTML = 'No se puede entregar los domingos';
     return false;
+  } else {
+    fechaFinError.innerHTML = '';
   }
 
   return true;
 }
 
 function validateForm() {
-  var error = false;
 
-  //asegurar que se selecciono medida
+  var error = false;
+  // Obtener los campos del formulario
   var medida = document.getElementsByName('medida');
+  var cantidad = document.getElementById('cantidad').value;
+  var comentarios = document.getElementById('comentarios').value;
+  var direccionRecogida = document.getElementById('direccion_recogida').value;
+  var direccionEntregaCampo = document.getElementById('direccion_entrega');
+  var direccionEntrega = document.getElementById('direccion_entrega').value;
+  var phone = document.getElementById('phone').value;
+  var email = document.getElementById('email').value;
+  var metodoPago = document.getElementsByName('paimentMethod');
+
+  //Obtener los campos errores
+  var medidaError = document.getElementById('medidaError');
+  var cantidadError = document.getElementById('cantidadError');
+  var comentariosError = document.getElementById('comentarioError');
+  var direccionRecogidaError = document.getElementById('direccionRecogidaError');
+  var direccionEntregaError = document.getElementById('direccionEntregaError');
+  var contactoError = document.getElementById('contactoError');
+  var metodoPagoError = document.getElementById('metodoPagoError');
+
+  //Validar campos requeridos
   if (!(medida[0].checked || medida[1].checked)) {  //si no se selecciono ninguna medida
-    var medidaError = document.getElementById('medidaError');
     medidaError.innerHTML = 'Seleccione una medida';
     error = true;
+  } else {
+    medidaError.innerHTML = '';
   }
-
-  //asegurar la cantidad de ropa
-  var cantidad = document.getElementById('cantidad').value;
-  if (cantidad == 0) {
-    var cantidadError = document.getElementById('cantidadError');
+  if (cantidad < 0 || cantidad == "" || cantidad == null) {
     cantidadError.innerHTML = 'Introduzca una cantidad';
     error = true;
   }
-  if (cantidad > 100) {
-    var cantidadError = document.getElementById('cantidadError');
+  else if (cantidad > 100) {
     cantidadError.innerHTML = 'La cantidad máxima es 100';
     error = true;
-  }
-
-  //asegurar que el largo de los comentarios sea menor a 1000 caracteres
-  var comentarios = document.getElementById('comentarios').value;
+  } else {
+    cantidadError.innerHTML = '';
+  }  
   if (comentarios.length > 1000) {
-    var comentariosError = document.getElementById('comentarioError');
     comentariosError.innerHTML = 'El comentario debe tener menos de 1000 caracteres';
     error = true;
+  } else {
+    comentariosError.innerHTML = '';
   }
-
-  //verificar la direccion de recogida
-  var direccionRecogida = document.getElementById('direccion_recogida').value;
   if (direccionRecogida == '') {
-    var direccionRecogidaError = document.getElementById('direccionRecogidaError');
     direccionRecogidaError.innerHTML = 'Introduzca una dirección';
     error = true;
+  } else {
+    direccionRecogidaError.innerHTML = '';
+  }
+  if (phone == '' && email == '') {
+    contactoError.innerHTML = 'Introduzca un telefono o correo';
+    error = true;
+  } else {
+    contactoError.innerHTML = '';
+  }
+  if (!(metodoPago[0].checked || metodoPago[1].checked)) {  //si no se selecciono ningun metodo de pago
+    metodoPagoError.innerHTML = 'Seleccione un metodo de pago';
+    error = true;
+  } else {
+    metodoPagoError.innerHTML = '';
   }
 
   //verificar la direccion de entrega
   if (!document.getElementById('sameAddress').checked) {
-    var direccionEntrega = document.getElementById('direccion_entrega').value;
     if (direccionEntrega == '') {
-      var direccionEntregaError = document.getElementById('direccionEntregaError');
       direccionEntregaError.innerHTML = 'Introduzca una dirección';
       error = true;
+    } else {
+      direccionEntregaError.innerHTML = '';
     }
   } else {
-    document.getElementById('direccion_entrega').value = direccionRecogida;
+    direccionEntrega = direccionRecogida;
+    //en campo input de direccion de entrega es direccion de recogida
+    direccionEntregaCampo.value = direccionEntrega;
   }
 
   //verificar la fechas
   error = !validarFechas();
 
-  //validar datos de contacto
-  var phone = document.getElementById('phone').value;
-  var email = document.getElementById('email').value;
-  if (phone == '' && email == '') {
-    var contactoError = document.getElementById('contactoError');
-    contactoError.innerHTML = 'Introduzca un telefono o correo';
-    error = true;
-  }
 
-  //verificar que selecciono un metodo de pago
-  var metodoPago = document.getElementsByName('paimentMethod');
-  if (!(metodoPago[0].checked || metodoPago[1].checked)) {  //si no se selecciono ningun metodo de pago
-    var metodoPagoError = document.getElementById('metodoPagoError');
-    metodoPagoError.innerHTML = 'Seleccione un metodo de pago';
-    error = true;
-  }
 
   var json = {};
   //si todo esta bien, crear un json y enviarlo
@@ -201,8 +228,13 @@ function validateForm() {
         time: ''
       }
     };
+
+      // go to confirmation page
+      window.location.href = 'confirmation.html';
   };
   console.log(json);
+
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
