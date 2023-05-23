@@ -13,7 +13,7 @@ function formularioContacto() {
     var error = false;
 
     // Validar campos requeridos
-    if(objeto.trim() === ''){
+    if (objeto.trim() === '') {
         objetoError.innerHTML = 'Debe ingresar un objeto';
         error = true;
     } else {
@@ -38,8 +38,48 @@ function formularioContacto() {
         correoError.innerHTML = '';
     }
 
-    if(error){
+    if (error) {
         return false;
+    } else {
+        // Función para enviar el formulario al servidor
+
+
+        // Crear un objeto con los datos del formulario
+        var nuevoContacto = {
+            objeto: objeto,
+            pedido: pedido,
+            comentario: comentario,
+            nombre: nombre,
+            email: email,
+            resuelto: false  // Añadir la propiedad "resuelto" con valor inicial false
+        };
+
+        // Enviar la solicitud POST al servidor JSON
+        fetch("http://localhost:3000/contactos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(nuevoContacto)
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    // La solicitud se completó con éxito
+                    console.log("El formulario se ha enviado correctamente.");
+                    // Restablecer los valores del formulario
+                    document.getElementById("objeto").value = "";
+                    document.getElementById("pedido").value = "";
+                    document.getElementById("comentario").value = "";
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("email").value = "";
+                } else {
+                    // Hubo un error al enviar el formulario
+                    console.log("Error al enviar el formulario.");
+                }
+            })
+            .catch(function (error) {
+                console.log("Error de conexión:", error);
+            });
     }
 
 
@@ -53,13 +93,4 @@ function formularioContacto() {
     mensaje += 'Email: ' + email;
     console
     alert(mensaje);
-
-    // Limpiar campos después de enviar el formulario
-    document.getElementById('objeto').value = '';
-    document.getElementById('pedido').value = '';
-    document.getElementById('comentario').value = '';
-    document.getElementById('nombre').value = '';
-    document.getElementById('email').value = '';
-    
-
 }

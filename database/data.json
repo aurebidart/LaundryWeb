@@ -200,5 +200,16 @@
         "time": "15:00"
       }
     }
+  ],
+  "contactos": [
+    {
+      "objeto": "Ropa estropeada",
+      "pedido": "1234",
+      "comentario": "Todo feo",
+      "nombre": "Nathan",
+      "email": "1234@gmail.com",
+      "resuelto": false,
+      "id": 1
+    }
   ]
 }
