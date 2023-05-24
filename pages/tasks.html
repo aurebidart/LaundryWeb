@@ -28,6 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link navbar-text mr-3" href="admin.html">Administración</a>
                     </li>
+                    <li class="nav-item">
+                        <span class="nav-link navbar-text mr-3" onclick="logout()">Cerrar sesion</span>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -36,16 +39,16 @@
     <main>
         <div class="container">
             <div class="text-center mt-5">
-                <h1 class="hi@user"></h1>
+                <h1 id="hi@user"></h1>
             </div>
-            <div class="tasks_types">
+            <div class="tasks_types mt-5">
                 <div class="tab active" onclick="changeTab(0)">Recoger</div>
                 <div class="tab" onclick="changeTab(1)">Lavar</div>
                 <div class="tab" onclick="changeTab(2)">Secar</div>
                 <div class="tab" onclick="changeTab(3)">Planchar y doblar</div>
                 <div class="tab" onclick="changeTab(4)">Entregar</div>
             </div>
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center mt-3">
                 <div class="tasks table-responsive">
                     <table class="tasks_table table table-striped text-center">
                         <thead id="task_table_head"></thead>

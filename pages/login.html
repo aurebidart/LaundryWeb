@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="../images/logo.png">
   <link rel="stylesheet" href="../styles/style.css">
+  <script src="../scripts/login_script.js"></script>
 </head>
 
 <body>
@@ -49,12 +50,15 @@
               <label class="mt-4" for="password">Contraseña</label>
               <input type="password" class="form-control" id="password">
               <div class="form-check mt-3">
+                <div class="error">
+                  <p id="errorPassword"></p>
+                </div>
                 <input type="checkbox" class="form-check-input" id="recuerdame">
                 <label class="form-check-label" for="recuerdame">Recuérdame</label>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <a class="forgot-password" href="password.html">¿Olvidaste tu contraseña?</a>
-                <button class="btn btn-primary" onclick="loginVerification()">Iniciar sesión</button>
+                <input type="button" class="btn btn-primary" onclick="loginVerification()" value="Iniciar sesión">
               </div>
             </div>
           </form>
@@ -68,7 +72,6 @@
       <p>© 2023 Burbujas Lavandería. Todos los derechos reservados.</p>
     </div>
   </footer>
-  <script src="../scripts/login_script.js"></script>
 </body>
 
 </html>

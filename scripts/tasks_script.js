@@ -115,14 +115,42 @@ function changeTab(index) {
 }
 
 async function changeStatus() {
+    var actualTab;
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    var actual_tab = 0;
     const promises = Array.from(checkboxes).map(checkbox => {
         const id = checkbox.id;
         return fetch(`http://localhost:3000/orders/${id}`)
         .then(response => response.json())
         .then(order => {
             actual_tab = order.status;
+            switch (order.status) {
+                case 0:
+                    order.collection.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                    order.collection.date = new Date().toISOString().slice(0, 10);
+                    order.collection.time = new Date().toLocaleTimeString();
+                    break;
+                case 1:
+                    order.wash.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                    order.wash.date = new Date().toISOString().slice(0, 10);
+                    order.wash.time = new Date().toLocaleTimeString();
+                    break;
+                case 2:
+                    order.dry.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                    order.dry.date = new Date().toISOString().slice(0, 10);
+                    order.dry.time = new Date().toLocaleTimeString();
+                    break;
+                case 3:
+                    order.iron.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                    order.iron.date = new Date().toISOString().slice(0, 10);
+                    order.iron.time = new Date().toLocaleTimeString();
+                    break;
+                case 4:
+                    order.delivery.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                    order.delivery.date = new Date().toISOString().slice(0, 10);
+                    order.delivery.time = new Date().toLocaleTimeString();
+                    break;
+            }
+
             order.status++;
             return fetch(`http://localhost:3000/orders/${id}`, {
                 method: 'PUT',
@@ -139,4 +167,17 @@ async function changeStatus() {
 
     await Promise.all(promises);
     changeTab(actual_tab);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hiuser = document.getElementById('hi@user');
+    const employee = JSON.parse(sessionStorage.getItem('laundry_employee'));
+    hiuser.textContent = `¡Hola, ${employee.firstName}!`;
+    changeTab(0);
+});
+
+function logout() {
+    sessionStorage.removeItem('laundry_employee');
+    localStorage.removeItem('laundry_employee');
+    window.location.href = 'index.html';
 }

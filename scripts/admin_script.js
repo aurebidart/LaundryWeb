@@ -80,5 +80,11 @@ replyBtn.addEventListener('click', function () {
     openEmailApplication(email);
 });
 
+function logout() {
+    sessionStorage.removeItem('laundry_employee');
+    localStorage.removeItem('laundry_employee');
+    window.location.href = 'index.html';
+}
+
 // Call the function to populate the complaints list on page load
 window.onload = populateComplaintsList;
