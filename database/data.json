@@ -89,7 +89,7 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 5,
+      "status": 5 ,
       "collection": {
         "employee": 102,
         "date": "2023-05-24",
