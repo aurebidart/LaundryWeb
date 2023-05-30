@@ -1,0 +1,37 @@
+.circle-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Ajusta este valor según tus necesidades */
+    margin: 0 auto;
+  }
+  
+  .circle {
+    flex: 0 0 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .completed {
+    background-color: green;
+  }
+  
+  .pending {
+    background-color: skyblue;
+  }
+
+  .current {
+    background-color: yellowgreen;
+  }
+  
+  .line {
+    flex: 1;
+    height: 3px;
+    position: relative;
+    top: 13px;
+    margin: 0 -1.5px;
+  }
+  
