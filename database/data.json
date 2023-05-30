@@ -89,7 +89,7 @@
       "phone": "123456789",
       "email": "asdfghjkl@gmail.com",
       "price": "10000",
-      "status": 5 ,
+      "status": 5,
       "collection": {
         "employee": 102,
         "date": "2023-05-24",
@@ -830,6 +830,33 @@
       "email": "A",
       "resuelto": false,
       "id": 1
+    },
+    {
+      "objeto": "123",
+      "pedido": "1234",
+      "comentario": "wesdf",
+      "nombre": "awsdf",
+      "email": "wasgf@asfd.ar",
+      "resuelto": false,
+      "id": 2
+    },
+    {
+      "objeto": "1",
+      "pedido": "23",
+      "comentario": "efwdcs x",
+      "nombre": "dsa",
+      "email": "fdsvxc@hjds.com",
+      "resuelto": false,
+      "id": 3
+    },
+    {
+      "objeto": "dssa",
+      "pedido": "21345",
+      "comentario": "ewfarsbr",
+      "nombre": "ewarf",
+      "email": "efwrgf",
+      "resuelto": false,
+      "id": 4
     }
   ]
 }

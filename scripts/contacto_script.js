@@ -62,14 +62,14 @@ function formularioContacto() {
         })
             .then(function (response) {
                 if (response.ok) {
-                    // La solicitud se completó con éxito
-                    alert("El formulario se envió con éxito.")
-                    // Restablecer los valores del formulario
-                    document.getElementById("objeto").value = "";
-                    document.getElementById("pedido").value = "";
-                    document.getElementById("comentario").value = "";
-                    document.getElementById("nombre").value = "";
-                    document.getElementById("email").value = "";
+                    // Limpiar el formulario
+                    document.getElementById('objeto').value = '';
+                    document.getElementById('pedido').value = '';
+                    document.getElementById('comentario').value = '';
+                    document.getElementById('nombre').value = '';
+                    document.getElementById('email').value = '';
+                    // Mostrar mensaje de éxito
+                    alert("Mensaje enviado con éxito.");
                 } else {
                     // Hubo un error al enviar el formulario
                     alert("Error al enviar el formulario.")
