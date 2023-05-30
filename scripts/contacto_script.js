@@ -63,7 +63,7 @@ function formularioContacto() {
             .then(function (response) {
                 if (response.ok) {
                     // La solicitud se completó con éxito
-                    console.log("El formulario se ha enviado correctamente.");
+                    alert("El formulario se envió con éxito.")
                     // Restablecer los valores del formulario
                     document.getElementById("objeto").value = "";
                     document.getElementById("pedido").value = "";
@@ -72,23 +72,14 @@ function formularioContacto() {
                     document.getElementById("email").value = "";
                 } else {
                     // Hubo un error al enviar el formulario
-                    console.log("Error al enviar el formulario.");
+                    alert("Error al enviar el formulario.")
+                    console.log("Error al enviar el formulario.", response.text());
                 }
             })
             .catch(function (error) {
+                // Hubo un error de conexión
+                alert("Error de conexión.")
                 console.log("Error de conexión:", error);
             });
     }
-
-
-
-    // Mostrar alerta con los datos ingresados
-    var mensaje = 'Datos ingresados:\n\n';
-    mensaje += 'Objeto: ' + objeto + '\n';
-    mensaje += 'Número de Pedido: ' + pedido + '\n';
-    mensaje += 'Comentario: ' + comentario + '\n';
-    mensaje += 'Nombre: ' + nombre + '\n';
-    mensaje += 'Email: ' + email;
-    console
-    alert(mensaje);
 }
