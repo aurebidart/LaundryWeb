@@ -38,20 +38,18 @@ function formularioContacto() {
         correoError.innerHTML = '';
     }
 
-    if (error) {
-        return false;
-    } else {
+    if (!error) {
         // Función para enviar el formulario al servidor
 
 
         // Crear un objeto con los datos del formulario
         var nuevoContacto = {
-            objeto: objeto,
-            pedido: pedido,
-            comentario: comentario,
-            nombre: nombre,
-            email: email,
-            resuelto: false  // Añadir la propiedad "resuelto" con valor inicial false
+            "objeto": objeto,
+            "pedido": pedido,
+            "comentario": comentario,
+            "nombre": nombre,
+            "email": email,
+            "resuelto": false  // Añadir la propiedad "resuelto" con valor inicial false
         };
 
         // Enviar la solicitud POST al servidor JSON
