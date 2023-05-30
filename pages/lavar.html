@@ -61,13 +61,12 @@
                         <div class="form-group">
                             <label>Medir por:</label><br>
                             <div class="form-check-inline">
-                                <div class="form-check ">
-                                    <input class="form-check-input" type="radio" name="medida" id="radioPeso" value="1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="medida" id="radioPeso" oninput="updatePrice()" value="1">
                                     <label class="form-check-label" for="radioPeso">Peso (Kg)</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="medida" id="radioUnidades"
-                                        value="2">
+                                    <input class="form-check-input" type="radio" name="medida" id="radioUnidades" oninput="updatePrice()" value="2">
                                     <label class="form-check-label" for="radioUnidades">Unidades</label>
                                 </div>
                                 <input class="ml-3" type="number" name="cantidad" id="cantidad">
@@ -166,7 +165,7 @@
                             <span id="metodoPagoError"></span>
                         </div>
                         <div class="col-md-10 mt-5 ml-4 row pagar">
-                            <h3 class="total-price col">Total: $0</h3>
+                            <h3 class="col" id="totalPrice">Total: $0</h3>
                             <div class="col-md-1"></div>
                             <button type="button" class="btn btn-primary col" onclick="validateForm()">A
                                 lavar</button>

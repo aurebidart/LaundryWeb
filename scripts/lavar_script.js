@@ -125,7 +125,7 @@ function validateForm() {
     error = true;
   } else {
     cantidadError.innerHTML = '';
-  }  
+  }
   if (comentarios.length > 1000) {
     comentariosError.innerHTML = 'El comentario debe tener menos de 1000 caracteres';
     error = true;
@@ -168,21 +168,11 @@ function validateForm() {
   //verificar la fechas
   error = !validarFechas();
 
-
-
-  var json = {};
   //si todo esta bien, crear un json y enviarlo
   if (!error) {
-    //crear json
 
-    // TODO Sacar esto de aca y hacerlo en una funcion a parte
-    //obtener precio
-    var price = 0;
-    if (medida[0].checked) {  //si es por kilo
-      price = cantidad * 5;
-    } else {  //si es por pieza
-      price = cantidad * 1;
-    }
+    //crear json
+    var json = {};
 
     var fechaInicio = new Date(document.getElementById('hora_recogida').value);
     var fechaFin = new Date(document.getElementById('hora_entrega').value);
@@ -229,8 +219,8 @@ function validateForm() {
       }
     };
 
-      // go to confirmation page
-      window.location.href = 'confirmation.html';
+    // go to confirmation page
+    window.location.href = 'confirmation.html';
   };
   console.log(json);
 
@@ -260,4 +250,16 @@ function toggleDireccionEntrega() {
   sameAddressCheckbox.addEventListener('change', function () {
     direccionEntregaInput.disabled = sameAddressCheckbox.checked;
   });
+}
+
+function updatePrice() {
+  //obtener precio
+  var price = 0;
+  var totalPrice = document.getElementById('totalPrice');
+  if (medida[0].checked) {  //si es por kilo
+    price = cantidad * 5;
+  } else if (medida[1].checked) {  //si es por pieza
+    price = cantidad * 1;
+  }
+  totalPrice.innerHTML = 'Total: $' + price;
 }
