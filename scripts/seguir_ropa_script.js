@@ -1,4 +1,3 @@
-
 function updateProgress(state) {
     var circle1 = document.getElementById("circle1");
     var circle2 = document.getElementById("circle2");
@@ -10,6 +9,17 @@ function updateProgress(state) {
     var line3 = document.getElementById("line3");
     var line4 = document.getElementById("line4");
     let currentState = document.getElementById("current-state");
+
+    circle1.classList.remove("completed", "current", "pending");
+    circle2.classList.remove("completed", "current", "pending");
+    circle3.classList.remove("completed", "current", "pending");
+    circle4.classList.remove("completed", "current", "pending");
+    circle5.classList.remove("completed", "current", "pending");
+    line1.classList.remove("completed", "current", "pending");
+    line2.classList.remove("completed", "current", "pending");
+    line3.classList.remove("completed", "current", "pending");
+    line4.classList.remove("completed", "current", "pending");
+    
 
     switch (state) {
         case 5:
