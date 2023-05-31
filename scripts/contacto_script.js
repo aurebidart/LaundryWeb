@@ -46,12 +46,13 @@ function formularioContacto() {
 
         // Crear un objeto con los datos del formulario
         var nuevoContacto = {
-            objeto: objeto,
-            pedido: pedido,
-            comentario: comentario,
-            nombre: nombre,
+            subject: objeto,
+            order: pedido,
+            comment: comentario,
+            name: nombre,
             email: email,
-            resuelto: false  // Añadir la propiedad "resuelto" con valor inicial false
+            time: new Date().toLocaleString(),
+            solved: false
         };
 
         // Enviar la solicitud POST al servidor JSON

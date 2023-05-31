@@ -4,25 +4,45 @@ function loginVerification() {
     var errorPassword = document.getElementById("errorPassword");
     var recuerdame = document.getElementById("recuerdame").checked;
 
-    //cargar empleado de la base de datos
-    fetch(`http://localhost:3000/employees/${numeroEmpleado}`)
+    // Verificar si el admin se ha logueado
+    fetch(`http://localhost:3000/admin/${numeroEmpleado}`)
         .then(response => response.json())
-        .then(employee => {
-            if (employee.password === password) {
+        .then(admin => {
+            if (admin.password === password) {
                 // Almacenar el número de empleado en el almacenamiento de sesión
-                sessionStorage.setItem("laundry_employee", JSON.stringify(employee));
+                sessionStorage.setItem("laundry_admin", JSON.stringify(admin));
                 if (recuerdame) {
                     // Almacenar el número de empleado en el almacenamiento local
-                    localStorage.setItem("laundry_employee", JSON.stringify(employee));
+                    localStorage.setItem("laundry_admin", JSON.stringify(admin));
                 }
-                window.location.href = "tasks.html";
+                window.location.href = "admin.html";
             } else {
-                errorPassword.innerHTML = "Contraseña incorrecta";
+                // Si no es admin, verificar si es empleado
+                fetch(`http://localhost:3000/employees/${numeroEmpleado}`)
+                    .then(response => response.json())
+                    .then(employee => {
+                        if (employee.password === password) {
+                            // Almacenar el número de empleado en el almacenamiento de sesión
+                            sessionStorage.setItem("laundry_employee", JSON.stringify(employee));
+                            if (recuerdame) {
+                                // Almacenar el número de empleado en el almacenamiento local
+                                localStorage.setItem("laundry_employee", JSON.stringify(employee));
+                            }
+                            window.location.href = "tasks.html";
+                        } else {
+                            errorPassword.innerHTML = "Contraseña incorrecta";
+                        }
+                    })
+                    .catch(error => {
+                        console.log('Error fetching employee data:', error);
+                    });
             }
         })
         .catch(error => {
-            console.log('Error fetching data:', error);
+            console.log('Error fetching admin data:', error);
         });
+
+
 }
 
 //verificar si ya está logueado cuando se carga la página

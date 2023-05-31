@@ -1,20 +1,39 @@
+var complaints = [];
 
-// Sample complaints data
-var complaints = [
-    {
-        time: '2023-05-22 10:30:00',
-        subject: 'Delivery Delay',
-        comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        email: 'johndoe@example.com'
-    },
-    {
-        time: '2023-05-22 11:15:00',
-        subject: 'Incorrect Item Received',
-        comment: 'Nulla facilisi. Phasellus consequat nisl sit amet est.',
-        email: 'janesmith@example.com'
-    }
+// Function to get the complaints from the database
+function getComplaints() {
+    fetch("http://localhost:3000/contactos")
+        .then(function (response) {
+            if (response.ok) {
+                // La solicitud se completó con éxito
+                return response.json();
+            } else {
+                // Hubo un error al obtener los contactos
+                throw new Error("Error al obtener los contactos.");
+            }
+        })
+        .then(function (contactos) {
+            // Manipular los datos de los contactos obtenidos
+            console.log(contactos);
+            complaints = contactos;
+            // Aquí puedes realizar las operaciones que necesites con los contactos obtenidos
+            populateComplaintsList();
+        })
+        .catch(function (error) {
+            console.log("Error de conexión:", error);
+        });
+}
 
-];
+// Function to populate the complaints list
+function populateComplaintsList() {
+    var complaintsList = document.getElementById('complaints-list');
+    complaints.forEach(function (complaint, index) {
+        if(complaint.solved) return;
+        var row = generateComplaintRow(complaint, index);
+        complaintsList.appendChild(row);
+    });
+}
+
 // Function to generate a row for each complaint
 function generateComplaintRow(complaint, index) {
     var row = document.createElement('li');
@@ -23,15 +42,6 @@ function generateComplaintRow(complaint, index) {
     row.dataset.index = index;
     row.innerHTML = '<span class="badge badge-primary">' + complaint.time + '</span> ' + complaint.subject;
     return row;
-}
-
-// Function to populate the complaints list
-function populateComplaintsList() {
-    var complaintsList = document.getElementById('complaints-list');
-    complaints.forEach(function (complaint, index) {
-        var row = generateComplaintRow(complaint, index);
-        complaintsList.appendChild(row);
-    });
 }
 
 // Function to update the complaint details
@@ -49,11 +59,11 @@ function updateComplaintDetails(index) {
 
 // Function to open the email application with pre-filled information
 function openEmailApplication(email) {
-    console.log(email);
     var complaint = complaints.find(function (complaint) {
         return complaint.email === email;
     });
-    if(complaint) {
+    if (complaint) {
+        resolveComplaint(complaint);
         var subject = complaint.subject;
         var body = complaint.comment;
         var mailtoLink = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
@@ -80,11 +90,42 @@ replyBtn.addEventListener('click', function () {
     openEmailApplication(email);
 });
 
+// Function to set resolved status as true for a complaint and update the database
+function resolveComplaint(complaint) {
+    complaint.solved = true;
+    fetch("http://localhost:3000/contactos/" + complaint.id, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(complaint)
+    })
+        .then(function (response) {
+            if (response.ok) {
+                // La solicitud se completó con éxito
+                return response.json();
+            } else {
+                // Hubo un error al actualizar el contacto
+                throw new Error("Error al actualizar el contacto.");
+            }
+        })
+        .then(function (contact) {
+            // Manipular los datos del contacto actualizado
+            console.log(contact);
+            alert('Complaint resolved!');
+        })
+        .catch(function (error) {
+            console.log("Error de conexión:", error);
+        });
+}
+
+
+
 function logout() {
-    sessionStorage.removeItem('laundry_employee');
-    localStorage.removeItem('laundry_employee');
+    sessionStorage.removeItem('laundry_admin');
+    localStorage.removeItem('laundry_admin');
     window.location.href = 'index.html';
 }
 
 // Call the function to populate the complaints list on page load
-window.onload = populateComplaintsList;
+window.onload = getComplaints;
