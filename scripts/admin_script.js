@@ -1,5 +1,8 @@
 var complaints = [];
 
+// Call the function to populate the complaints list on page load
+window.onload = getComplaints;
+
 // Function to get the complaints from the database
 function getComplaints() {
     fetch("http://localhost:3000/contactos")
@@ -84,11 +87,16 @@ document.addEventListener('click', function (event) {
 });
 
 // Event listener for reply button click
-var replyBtn = document.getElementById('reply-btn');
-replyBtn.addEventListener('click', function () {
-    var email = this.getAttribute('data-email');
-    openEmailApplication(email);
+// Wait for the DOM to be ready
+document.addEventListener("DOMContentLoaded", function (event) {
+    // Your code to run since DOM is loaded and ready
+    var replyBtn = document.getElementById('reply-btn');
+    replyBtn.addEventListener('click', function () {
+        var email = this.getAttribute('data-email');
+        openEmailApplication(email);
+    });
 });
+
 
 // Function to set resolved status as true for a complaint and update the database
 function resolveComplaint(complaint) {
@@ -127,5 +135,3 @@ function logout() {
     window.location.href = 'index.html';
 }
 
-// Call the function to populate the complaints list on page load
-window.onload = getComplaints;
