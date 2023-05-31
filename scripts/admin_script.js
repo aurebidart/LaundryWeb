@@ -1,4 +1,3 @@
-
 // Sample complaints data
 var complaints = [
     {
