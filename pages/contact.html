@@ -9,40 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/logo.png">
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/contacto_script.js"></script>
+    <script src="../scripts/client_scrip.js"></script>
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-light mx-auto">
-            <button class="navbar-toggler sm-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link navbar-text mr-3" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-text mr-3" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link navbar-text mr-3" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-text" href="login.html">Empleado</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <header id="header-container"></header>
 
     <main>
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <h1 class="mb-4">Formulario de Contact</h1>
+                    <h1 class="mb-4">Formulario de Contacto</h1>
                     <form>
                         <div class="form-group">
                             <label for="Objeto">Objeto:</label>
@@ -82,15 +61,15 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary" onclick="formularioContacto()">Enviar</button>
+                            <input type="button" class="btn btn-primary" onclick="formularioContacto()" value="Enviar">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </main>
-</body>
 
-<script src="../scripts/contacto_script.js"></script>
+    <footer id="footer-container"></footer>
+</body>
 
 </html>
