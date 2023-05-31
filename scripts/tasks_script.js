@@ -171,10 +171,28 @@ async function changeStatus() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const hiuser = document.getElementById('hi@user');
-    const employee = JSON.parse(sessionStorage.getItem('laundry_employee'));
+    // If the employee or the admin is logged in, show the name of the user
+    const employee = JSON.parse(sessionStorage.getItem('laundry_employee')) ? JSON.parse(sessionStorage.getItem('laundry_employee')) : JSON.parse(localStorage.getItem('laundry_admin'));
     hiuser.textContent = `¡Hola, ${employee.firstName}!`;
     changeTab(0);
 });
+
+
+// Obtener la información del usuario almacenada en el almacenamiento de sesión
+const employeeData = JSON.parse(sessionStorage.getItem("laundry_employee"));
+
+// Verificar si el usuario "laundry_employee" está conectado
+if (employeeData) {
+  // Ocultar el enlace de "Administración"
+  // esperar que el DOM se cargue
+    document.addEventListener("DOMContentLoaded", function () {
+        const adminLink = document.getElementById("admin-link");
+        adminLink.style.display = "none";
+    }
+    );
+
+}
+
 
 function logout() {
     sessionStorage.removeItem('laundry_employee');
