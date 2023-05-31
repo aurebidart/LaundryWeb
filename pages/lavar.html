@@ -43,15 +43,15 @@
                             <div class="form-check-inline">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="medida" id="radioPeso"
-                                        oninput="updatePrice()" value="1">
+                                     value="1" oninput="updatePrice()">
                                     <label class="form-check-label" for="radioPeso">Peso (Kg)</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="medida" id="radioUnidades"
-                                        oninput="updatePrice()" value="2">
+                                         value="2" oninput="updatePrice()">
                                     <label class="form-check-label" for="radioUnidades">Unidades</label>
                                 </div>
-                                <input class="ml-3" type="number" name="cantidad" id="cantidad">
+                                <input class="ml-3" type="number" name="cantidad" id="cantidad" oninput="updatePrice()">
                             </div>
                             <div class="error">
                                 <span id="medidaError"></span>

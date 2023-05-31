@@ -181,16 +181,16 @@ function validateForm() {
       quantity: cantidad,
       clothesType: document.getElementById('tipo_ropa').value,
       comment: comentarios,
-      collection_date: fechaInicio.getDate(),
-      collection_time: fechaInicio.getTime(),
+      collection_date: formatDate(fechaInicio),
+      collection_time: formatTime(fechaInicio),
       collection_address: direccionRecogida,
       delivery_address: direccionEntrega,
-      delivery_date: fechaFin.getDate(),
-      delivery_time: fechaFin.getTime(),
+      delivery_date: formatDate(fechaFin),
+      delivery_time: formatTime(fechaFin),
       payment_method: metodoPago[0].checked ? 'efectivo' : 'tarjeta',
       phone: phone,
       email: email,
-      price: price,
+      price: getPrice(),
       status: 0,
       collection: {
         employee: '',
@@ -219,8 +219,23 @@ function validateForm() {
       }
     };
 
-    // go to confirmation page
-    window.location.href = 'confirmation.html';
+    //enviar json
+    fetch("http://localhost:3000/orders", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(json)
+    })
+      .then(response => response.json())
+      .then(data => {
+        sessionStorage.setItem('order_id', JSON.stringify(data.id));
+        // go to confirmation page
+        window.location.href = 'confirmation.html';
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
   console.log(json);
 
@@ -254,12 +269,34 @@ function toggleDireccionEntrega() {
 
 function updatePrice() {
   //obtener precio
-  var price = 0;
   var totalPrice = document.getElementById('totalPrice');
+  var price = getPrice();
+  totalPrice.innerHTML = 'Total: $' + price;
+}
+
+function getPrice() {
+  var price = 0;
+  var medida = document.getElementsByName('medida');
+  var cantidad = document.getElementById('cantidad').value;
   if (medida[0].checked) {  //si es por kilo
     price = cantidad * 5;
   } else if (medida[1].checked) {  //si es por pieza
     price = cantidad * 1;
   }
-  totalPrice.innerHTML = 'Total: $' + price;
+  return price;
+}
+
+function formatDate(date) {
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  return year + '-' + month + '-' + day;
+}
+
+function formatTime(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+
+  return hours + ':' + minutes;
 }
