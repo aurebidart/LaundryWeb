@@ -14,10 +14,9 @@ hiuser.textContent = `¡Hola, ${employee.firstName}!`;
 changeTab(0);
 
 // Obtener la información del usuario almacenada en el almacenamiento de sesión
-const employeeData = JSON.parse(sessionStorage.getItem("laundry_employee"));
-
+const admin = JSON.parse(sessionStorage.getItem("laundry_admin"));
 // Verificar si un usuario "laundry_employee" está conectado
-if (employeeData) {
+if (!admin) {
     // Ocultar el enlace de "Administración"
     const adminLink = document.getElementById("admin-link");
     adminLink.style.display = "none";
@@ -133,37 +132,35 @@ function changeTab(index) {
 }
 
 async function changeStatus() {
-    var actualTab;
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     const promises = Array.from(checkboxes).map(checkbox => {
         const id = checkbox.id;
         return fetch(`http://localhost:3000/orders/${id}`)
             .then(response => response.json())
             .then(order => {
-                actual_tab = order.status;
                 switch (order.status) {
                     case 0:
-                        order.collection.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                        order.collection.employee = employee.id;
                         order.collection.date = new Date().toISOString().slice(0, 10);
                         order.collection.time = new Date().toLocaleTimeString();
                         break;
                     case 1:
-                        order.wash.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                        order.wash.employee = employee.id;
                         order.wash.date = new Date().toISOString().slice(0, 10);
                         order.wash.time = new Date().toLocaleTimeString();
                         break;
                     case 2:
-                        order.dry.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                        order.dry.employee = employee.id;
                         order.dry.date = new Date().toISOString().slice(0, 10);
                         order.dry.time = new Date().toLocaleTimeString();
                         break;
                     case 3:
-                        order.iron.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                        order.iron.employee = employee.id;
                         order.iron.date = new Date().toISOString().slice(0, 10);
                         order.iron.time = new Date().toLocaleTimeString();
                         break;
                     case 4:
-                        order.delivery.employee = JSON.parse(sessionStorage.getItem('laundry_employee')).id;
+                        order.delivery.employee = employee.id;
                         order.delivery.date = new Date().toISOString().slice(0, 10);
                         order.delivery.time = new Date().toLocaleTimeString();
                         break;
@@ -184,12 +181,16 @@ async function changeStatus() {
     });
 
     await Promise.all(promises);
-    changeTab(actual_tab);
 }
 
 
 function logout() {
-    sessionStorage.removeItem('laundry_employee');
-    localStorage.removeItem('laundry_employee');
+    if (admin) {
+        sessionStorage.removeItem('laundry_admin');
+        localStorage.removeItem('laundry_admin');
+    } else {
+        sessionStorage.removeItem('laundry_employee');
+        localStorage.removeItem('laundry_employee');
+    }
     window.location.href = 'index.html';
 }

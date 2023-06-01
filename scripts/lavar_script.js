@@ -109,6 +109,10 @@ function validateForm() {
   var contactoError = document.getElementById('contactoError');
   var metodoPagoError = document.getElementById('metodoPagoError');
 
+  
+  //verificar la fechas
+  error = !validarFechas();
+
   //Validar campos requeridos
   if (!(medida[0].checked || medida[1].checked)) {  //si no se selecciono ninguna medida
     medidaError.innerHTML = 'Seleccione una medida';
@@ -165,9 +169,6 @@ function validateForm() {
     direccionEntregaCampo.value = direccionEntrega;
   }
 
-  //verificar la fechas
-  error = !validarFechas();
-
   //si todo esta bien, crear un json y enviarlo
   if (!error) {
 
@@ -179,7 +180,8 @@ function validateForm() {
     json = {
       metric: medida[0].checked ? 'kg' : 'pieza',
       quantity: cantidad,
-      clothesType: document.getElementById('tipo_ropa').value,
+      clothe_type: document.getElementById('tipo_ropa').value,
+      //wash_type: document.getElementById('tipo_lavado').value,
       comment: comentarios,
       collection_date: formatDate(fechaInicio),
       collection_time: formatTime(fechaInicio),
