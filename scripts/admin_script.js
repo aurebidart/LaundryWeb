@@ -31,7 +31,7 @@ function getComplaints() {
 function populateComplaintsList() {
     var complaintsList = document.getElementById('complaints-list');
     complaints.forEach(function (complaint, index) {
-        if(complaint.solved) return;
+        if (complaint.solved) return;
         var row = generateComplaintRow(complaint, index);
         complaintsList.appendChild(row);
     });
@@ -87,16 +87,11 @@ document.addEventListener('click', function (event) {
 });
 
 // Event listener for reply button click
-// Wait for the DOM to be ready
-document.addEventListener("DOMContentLoaded", function (event) {
-    // Your code to run since DOM is loaded and ready
-    var replyBtn = document.getElementById('reply-btn');
-    replyBtn.addEventListener('click', function () {
-        var email = this.getAttribute('data-email');
-        openEmailApplication(email);
-    });
+var replyBtn = document.getElementById('reply-btn');
+replyBtn.addEventListener('click', function () {
+    var email = this.getAttribute('data-email');
+    openEmailApplication(email);
 });
-
 
 // Function to set resolved status as true for a complaint and update the database
 function resolveComplaint(complaint) {
@@ -127,11 +122,8 @@ function resolveComplaint(complaint) {
         });
 }
 
-
-
 function logout() {
     sessionStorage.removeItem('laundry_admin');
     localStorage.removeItem('laundry_admin');
     window.location.href = 'index.html';
 }
-
