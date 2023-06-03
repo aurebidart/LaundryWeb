@@ -1,9 +1,9 @@
 $(document).ready(function() {
   // Get the header element
-  var headerElement = document.getElementById('header-container');
+  var headerElement = document.getElementById('header-container-employee');
 
   // Fetch the header.html content
-  fetch("../pages/clients_header.html")
+  fetch("../pages/employee_header.html")
       .then(function(response) {
           if (response.ok) {
               return response.text();
@@ -35,15 +35,3 @@ $(document).ready(function() {
           console.log("Error:", error);
       });
 });
-
-
-
-fetch("../pages/footer.html")
-  .then(response => response.text())
-  .then(html => {
-    const footerContainer = document.getElementById("footer-container");
-    footerContainer.innerHTML = html;
-  })
-  .catch(error => {
-    console.error("Error al cargar el archivo de pie de página:", error);
-  });
