@@ -9,7 +9,7 @@ const tableHeads = [
 
 // At the loading of the page, show the name of the user
 const hiuser = document.getElementById('hi@user');
-const employee = JSON.parse(sessionStorage.getItem('laundry_employee')) ? JSON.parse(sessionStorage.getItem('laundry_employee')) : JSON.parse(localStorage.getItem('laundry_admin'));
+const employee = JSON.parse(sessionStorage.getItem('laundry_employee')) ? JSON.parse(sessionStorage.getItem('laundry_employee')) : JSON.parse(sessionStorage.getItem('laundry_admin'));
 hiuser.textContent = `¡Hola, ${employee.firstName}!`;
 changeTab(0);
 
