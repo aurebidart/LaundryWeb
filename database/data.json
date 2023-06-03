@@ -123,6 +123,50 @@
         "time": "5:20:08 PM"
       },
       "id": 1
+    },
+    {
+      "metric": "kg",
+      "quantity": "12",
+      "clothe_type": "toallas",
+      "wash_type": "lavado delicado",
+      "comment": "",
+      "collection_date": "2023-6-6",
+      "collection_time": "17:41",
+      "collection_address": "205 chemin de la rufière",
+      "delivery_address": "205 chemin de la rufière",
+      "delivery_date": "2023-6-22",
+      "delivery_time": "17:41",
+      "payment_method": "efectivo",
+      "phone": "+33783133280",
+      "email": "natnow2001@gmail.com",
+      "price": 60,
+      "status": 1,
+      "collection": {
+        "employee": 101,
+        "date": "2023-06-03",
+        "time": "17:42:39"
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 2
     }
   ]
 }
