@@ -101,13 +101,15 @@ function handleBuscarPedido() {
     // Get the pedido number entered by the user
     var pedidoNumber = document.getElementById("numberPedido").value;
     var currentState = document.getElementById("current-state");
+    // Remove the current state
+    currentState.textContent = "No se encontro el pedido";
     // Display the progress bar based on the pedido number
-    fetch("http://localhost:3000/orders/" + pedidoNumber)
+    fetch(`http://localhost:3000/orders/${pedidoNumber}`)
         .then(response => response.json())
         .then(data => {
             updateProgress(data.status);
         })
         .catch(error => {
-            currentState.textContent = "No se encontro el pedido" + error;
+            console.log(error);
         });
 }
