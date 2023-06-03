@@ -181,7 +181,7 @@ function validateForm() {
       metric: medida[0].checked ? 'kg' : 'pieza',
       quantity: cantidad,
       clothe_type: document.getElementById('tipo_ropa').value,
-      //wash_type: document.getElementById('tipo_lavado').value,
+      wash_type: document.getElementById('tipo_lavado').value,
       comment: comentarios,
       collection_date: formatDate(fechaInicio),
       collection_time: formatTime(fechaInicio),
