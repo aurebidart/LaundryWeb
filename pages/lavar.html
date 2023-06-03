@@ -24,7 +24,7 @@
                         <div class="form-group">
                             <div class="form-check form-check-inline">
                                 <label for="tipo_ropa">Tipo de ropa:</label><br>
-                                <select class="ml-3 select" name="tipo_ropa" id="tipo_ropa">
+                                <select class="select" name="tipo_ropa" id="tipo_ropa">
                                     <option value="sabanas">Sabanas</option>
                                     <option value="cubrecamas">Frazada - Cubrecamas</option>
                                     <option value="toallas">Toallas</option>
@@ -46,9 +46,10 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Medir por:</label><br>
+                        <div class="form-group form-check-inline">
                             <div class="form-check-inline">
+                                
+                            <label>Medir por:</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="medida" id="radioPeso" value="1"
                                         oninput="updatePrice()">
@@ -59,7 +60,7 @@
                                         value="2" oninput="updatePrice()">
                                     <label class="form-check-label" for="radioUnidades">Unidades</label>
                                 </div>
-                                <input class="ml-3" type="number" name="cantidad" id="cantidad" oninput="updatePrice()">
+                                <input class="form-control" type="number" name="cantidad" id="cantidad" oninput="updatePrice()">
                             </div>
                             <div class="error">
                                 <span id="medidaError"></span>
@@ -85,7 +86,7 @@
                         <div class="form-group">
                             <label for="direccion_recogida">Direccion de recogida:</label><br>
                             <input type="text" class="form-control" id="direccion_recogida">
-                            <input type="checkbox" name="sameAddress" id="sameAddress" checked
+                            <input class="form-check-input" type="checkbox" name="sameAddress" id="sameAddress" checked
                                 onclick="toggleDireccionEntrega()">
                             <label for="sameAddress">La direccion de recogida y entrega son la misma</label>
                             <div class="error">

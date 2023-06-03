@@ -3,87 +3,67 @@ function validarFechas() {
   var fechaInicio = new Date(document.getElementById('hora_recogida').value);
   var fechaFin = new Date(document.getElementById('hora_entrega').value);
 
-  // Obtener los errores
-  var fechaInicioError = document.getElementById('fechaRecogidaError');
-  var fechaFinError = document.getElementById('fechaEntregaError');
-
-  // Validación de fechas
-  // Debio haberse hecho con un input de tipo date, pero no se pudo por problemas de compatibilidad
-  if (fechaInicio == 'Invalid Date') {
-    fechaInicioError.innerHTML = 'Introduzca una fecha de recogida';
-    return false;
-  } else {
-    fechaInicioError.innerHTML = '';
-  }
-  if (fechaFin == 'Invalid Date') {
-    fechaFinError.innerHTML = 'Introduzca una fecha de entrega';
-    return false;
-  } else {
-    fechaFinError.innerHTML = '';
-  }
-
   var now = new Date();
   var fechaMinima = new Date(now.getTime() + 15 * 60000);
-
-  if (fechaInicio < fechaMinima) {
-    fechaInicioError.innerHTML = 'La fecha de recogida debe ser al menos 15 minutos después de la fecha actual';
-    return false;
-  } else {
-    fechaInicioError.innerHTML = '';
-  }
-
   var tiempoDeLavado = new Date(fechaInicio.getTime() + 7 * 3600000);
-  if (fechaFin <= tiempoDeLavado) {
-    fechaFinError.innerHTML = 'La fecha de entrega debe ser al menos 7 horas después de la fecha de recogida';
-    return false;
-  } else {
-    fechaFinError.innerHTML = '';
-  }
 
   var diaInicio = fechaInicio.getDay();
   var horaInicio = fechaInicio.getHours();
   var diaFin = fechaFin.getDay();
   var horaFin = fechaFin.getHours();
 
-  // Validación de horarios
-  if (horaInicio < 8 || horaInicio >= 20) {    // Lunes a viernes, fuera de horario
+  // Obtener los errores
+  var fechaInicioError = document.getElementById('fechaRecogidaError');
+  var fechaFinError = document.getElementById('fechaEntregaError');
+
+  var errorInicio = false;
+  var errorFin = false;
+
+  // Validación de fechas
+  // Debio haberse hecho con un input de tipo date, pero no se pudo por problemas de compatibilidad
+  if (fechaInicio == 'Invalid Date') {
+    errorInicio = true;
+    fechaInicioError.innerHTML = 'Introduzca una fecha de recogida';
+  } else if (fechaInicio < fechaMinima) {
+    errorInicio = true;
+    fechaInicioError.innerHTML = 'La fecha de recogida debe ser al menos 15 minutos después de la fecha actual';
+  } else if (horaInicio < 8 || horaInicio >= 20) {    // Lunes a viernes, fuera de horario
+    errorInicio = true;
     fechaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
-    return false;
-  } else {
-    fechaInicioError.innerHTML = '';
-  }
-
-  if (diaInicio === 6 && (horaInicio < 8 || horaInicio >= 14)) { // Sábado, fuera de horario
+  } else if (diaInicio === 6 && (horaInicio < 8 || horaInicio >= 14)) { // Sábado, fuera de horario
+    errorInicio = true;
     fechaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 14:00 los sábados ->';
-    return false;
-  } else {
-    fechaInicioError.innerHTML = '';
-  }
-  if (horaFin < 8 || horaFin >= 20) {    // Lunes a viernes, fuera de horario
-    var horaFinError = document.getElementById('fechaEntregaError');
-    horaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
-    return false;
-  }
-  if (diaFin === 6 && (horaFin < 8 || horaFin >= 14)) { // Sábado, fuera de horario
-    fechaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 14:00 los sábados ->';
-    return false;
-  } else {
-    fechaFinError.innerHTML = '';
-  }
-  if (diaInicio === 0) { // Domingo
+  } else if (diaInicio === 0) { // Domingo
+    errorInicio = true;
     fechaInicioError.innerHTML = 'No se puede recoger los domingos';
-    return false;
-  } else {
+  }
+
+  if (fechaFin == 'Invalid Date') {
+    errorFin = true;
+    fechaFinError.innerHTML = 'Introduzca una fecha de entrega';
+  } else if (fechaFin <= tiempoDeLavado) {
+    errorFin = true;
+    fechaFinError.innerHTML = 'La fecha de entrega debe ser al menos 7 horas después de la fecha de recogida';
+  } else if (horaFin < 8 || horaFin >= 20) {    // Lunes a viernes, fuera de horario
+    errorFin = true;
+    horaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
+  } else if (diaFin === 6 && (horaFin < 8 || horaFin >= 14)) { // Sábado, fuera de horario
+    errorFin = true;
+    fechaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 14:00 los sábados ->';
+  } else if (diaFin === 0) { // Domingo
+    errorFin = true;
+    fechaFinError.innerHTML = 'No se puede entregar los domingos';
+  }
+
+  if (!errorInicio) {
     fechaInicioError.innerHTML = '';
   }
-  if (diaFin === 0) { // Domingo
-    fechaFinError.innerHTML = 'No se puede entregar los domingos';
-    return false;
-  } else {
+
+  if (!errorFin) {
     fechaFinError.innerHTML = '';
   }
 
-  return true;
+  return errorInicio || errorFin;
 }
 
 function validateForm() {
