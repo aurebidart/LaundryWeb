@@ -13,15 +13,6 @@ const employee = JSON.parse(sessionStorage.getItem('laundry_employee')) ? JSON.p
 hiuser.textContent = `¡Hola, ${employee.firstName}!`;
 changeTab(0);
 
-// Obtener la información del usuario almacenada en el almacenamiento de sesión
-const admin = JSON.parse(sessionStorage.getItem("laundry_admin"));
-// Verificar si un usuario "laundry_employee" está conectado
-if (!admin) {
-    // Ocultar el enlace de "Administración"
-    const adminLink = document.getElementById("admin-link");
-    adminLink.style.display = "none";
-}
-
 
 function changeTab(index) {
     //cargo los empleados desde el puerto 3000

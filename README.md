@@ -1,5 +1,5 @@
 # Burbujas Lavandería
-Burbujas Lavandería es una aplicación web que permite a los usuarios programar y organizar el servicio de lavandería en línea. Con esta plataforma, los usuarios pueden programar la recogida y entrega de su ropa, seleccionar la cantidad y el tipo de ropa a lavar, y realizar el pago en línea o en efectivo.
+Burbujas Lavandería es una aplicación web que permite a los usuarios programar y organizar el servicio de lavandería en línea. Con esta plataforma, los usuarios pueden programar la recogida y entrega de su ropa, seleccionar la cantidad y el tipo de ropa a lavar, realizar el pago en línea o en efectivo y seguir su pedido.
 
 ## Características
 * Programación de recogida y entrega: Los usuarios pueden programar fácilmente el punto de recogida y entrega de su ropa.

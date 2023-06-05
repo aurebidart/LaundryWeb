@@ -91,7 +91,7 @@ function validateForm() {
 
   
   //verificar la fechas
-  error = !validarFechas();
+  error = validarFechas();
 
   //Validar campos requeridos
   if (!(medida[0].checked || medida[1].checked)) {  //si no se selecciono ninguna medida
