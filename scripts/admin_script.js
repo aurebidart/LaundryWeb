@@ -121,9 +121,3 @@ function resolveComplaint(complaint) {
             console.log("Error de conexión:", error);
         });
 }
-
-function logout() {
-    sessionStorage.removeItem('laundry_admin');
-    localStorage.removeItem('laundry_admin');
-    window.location.href = 'index.html';
-}

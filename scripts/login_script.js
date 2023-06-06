@@ -11,6 +11,8 @@ function loginVerification() {
             if (admin.password === password) {
                 // Almacenar el número de empleado en el almacenamiento de sesión
                 sessionStorage.setItem("laundry_admin", JSON.stringify(admin));
+                sessionStorage.removeItem("laundry_employee");
+                localStorage.removeItem("laundry_employee");
                 if (recuerdame) {
                     // Almacenar el número de empleado en el almacenamiento local
                     localStorage.setItem("laundry_admin", JSON.stringify(admin));
@@ -24,6 +26,8 @@ function loginVerification() {
                         if (employee.password === password) {
                             // Almacenar el número de empleado en el almacenamiento de sesión
                             sessionStorage.setItem("laundry_employee", JSON.stringify(employee));
+                            sessionStorage.removeItem("laundry_admin");
+                            localStorage.removeItem("laundry_admin");
                             if (recuerdame) {
                                 // Almacenar el número de empleado en el almacenamiento local
                                 localStorage.setItem("laundry_employee", JSON.stringify(employee));
@@ -48,11 +52,18 @@ function loginVerification() {
 //verificar si ya está logueado cuando se carga la página
 document.addEventListener('DOMContentLoaded', function () {
     var loaded_employee = JSON.parse(localStorage.getItem("laundry_employee"));
+    var loaded_admin = JSON.parse(localStorage.getItem("laundry_admin"));
     if (loaded_employee) {
         var numeroEmpleado = document.getElementById("numeroEmpleado");
         var password = document.getElementById("password");
         numeroEmpleado.value = loaded_employee.id;
         password.value = loaded_employee.password;
+    }
+    if (loaded_admin) {
+        var numeroEmpleado = document.getElementById("numeroEmpleado");
+        var password = document.getElementById("password");
+        numeroEmpleado.value = loaded_admin.id;
+        password.value = loaded_admin.password;
     }
 });
 

@@ -44,3 +44,11 @@ $(document).ready(function () {
             console.log("Error:", error);
         });
 });
+
+function logout() {
+    sessionStorage.removeItem('laundry_admin');
+    localStorage.removeItem('laundry_admin');
+    sessionStorage.removeItem('laundry_employee');
+    localStorage.removeItem('laundry_employee');
+    window.location.href = 'index.html';
+}
