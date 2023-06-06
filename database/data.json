@@ -37,6 +37,16 @@
       "time": "05/06/2023 15:45:54",
       "solved": false,
       "id": 1
+    },
+    {
+      "subject": "Reset Password",
+      "order": null,
+      "comment": "Employee ID: 12345 needs to reset his password",
+      "name": "Employee",
+      "email": "coucou@gmail",
+      "time": "06/06/2023 18:50:41",
+      "solved": true,
+      "id": 2
     }
   ],
   "orders": [
