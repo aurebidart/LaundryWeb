@@ -10,7 +10,11 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/logo.png">
+
+    <link rel="stylesheet"
+        href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/modules/5ce1026a32c86fdeda9632be1a4244c0.min.css">
     <link rel="stylesheet" href="../styles/lavar_style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
@@ -19,153 +23,207 @@
 
     <main>
         <div class="container mt-5">
-            <form id="form_lavar">
-                <h2>Ropa</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-check form-check-inline">
-                                <label for="tipo_ropa">Tipo de ropa:</label><br>
-                                <select class="form-select" name="tipo_ropa" id="tipo_ropa">
-                                    <option value="sabanas">Sabanas</option>
-                                    <option value="cubrecamas">Frazada - Cubrecamas</option>
-                                    <option value="toallas">Toallas</option>
-                                    <option value="delicada">Ropa delicada</option>
-                                    <option value="traje">Traje</option>
-                                    <option value="diara">Ropa diaria</option>
-                                    <option value="zapatos">Zapatos - Zapatillas</option>
-                                    <option value="bebe">Ropa de bebe</option>
-                                </select>
+            <div class="bg-white border rounded-5">
+                <section class="p-4 d-flex justify-content-center w-100">
+                    <ul class="stepper stepper-horizontal" data-mdb-stepper="stepper"
+                        style="height: 380px; overflow-y: auto;">
+                        <li class="stepper-step stepper-completed stepper-active">
+                            <div class="stepper-head" tabindex="0" id="step1">
+                                <span class="stepper-head-icon"> 1 </span>
+                                <span class="stepper-head-text"> Clothes </span>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <label for="tipo_lavado">Tipo de ropa:</label><br>
-                                <select class="ml-3 form-select" name="tipo_lavado" id="tipo_lavado">
-                                    <option value="a mano">A mano</option>
-                                    <option value="agua fria">Agua fria</option>
-                                    <option value="agua caleinte">Agua caliente</option>
-                                    <option value="en seco">En seco</option>
-                                    <option value="lavado delicado">Lavado delicado</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group form-check-inline">
-                            <div class="form-check-inline">
+                            <div class="stepper-content py-3 stepper-content-hide mt-5" style="display: block;">
+                                <div class="row align-items-start">
+                                    <div class="col form-group">
+                                        <label for="tipo_ropa" class="mr-2">Clothing type:</label>
+                                        <select class="form-select" name="tipo_ropa" id="tipo_ropa">
+                                            <option value="diara">Daily clothing</option>
+                                            <option value="sabanas">Sheets</option>
+                                            <option value="cubrecamas">Blankets - Bedspreads</option>
+                                            <option value="toallas">Towels</option>
+                                            <option value="delicada">Delicate clothing</option>
+                                            <option value="traje">Suit</option>
+                                            <option value="zapatos">Shoes - Sneakers</option>
+                                            <option value="bebe">Baby clothing</option>
+                                        </select>
+                                    </div>
 
-                                <label>Medir por:</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="medida" id="radioPeso" value="1"
-                                        oninput="updatePrice()">
-                                    <label class="form-check-label" for="radioPeso">Peso (Kg)</label>
+                                    <div class="col form-group">
+                                        <label for="tipo_lavado" class="mr-2">Washing type:</label>
+                                        <select class="form-select" name="tipo_lavado" id="tipo_lavado">
+                                            <option value="agua caleinte">Hot water</option>
+                                            <option value="agua fria">Cold water</option>
+                                            <option value="lavado delicado">Delicate wash</option>
+                                            <option value="en seco">Dry cleaning</option>
+                                            <option value="a mano">Hand wash</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col form-group">
+                                        <label>Measurement:</label>
+                                        <span>
+                                            <input class="form-check-input" type="radio" name="medida" id="radioPeso"
+                                                value="1" oninput="updatePrice()">
+                                            <label class="form-check-label" for="radioPeso">Weight (Kg)</label>
+                                        </span>
+                                        <span>
+                                            <input class="form-check-input" type="radio" name="medida"
+                                                id="radioUnidades" value="2" oninput="updatePrice()">
+                                            <label class="form-check-label" for="radioUnidades">Units</label>
+                                        </span>
+                                        <input class="form-control ml-2" type="number" name="cantidad" id="cantidad"
+                                            oninput="updatePrice()">
+                                        <div class="error ml-3">
+                                            <span id="medidaError"></span>
+                                            <span class="ml-2" id="cantidadError"></span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="medida" id="radioUnidades"
-                                        value="2" oninput="updatePrice()">
-                                    <label class="form-check-label" for="radioUnidades">Unidades</label>
+                            </div>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="-1" id="step2">
+                                <span class="stepper-head-icon"> 2 </span>
+                                <span class="stepper-head-text"> Address </span>
+                            </div>
+                            <div class="stepper-content py-3 mt-5" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="direccion_recogida">Pickup address:</label><br>
+                                            <input type="text" class="form-control" id="direccion_recogida">
+                                            <input class="form-check-input" type="checkbox" name="sameAddress"
+                                                id="sameAddress" checked onclick="toggleDireccionEntrega()">
+                                            <label for="sameAddress">The pickup and delivery addresses are the
+                                                same</label>
+                                            <div class="error">
+                                                <span id="direccionRecogidaError"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="direccion_entrega">Delivery address:</label><br>
+                                            <input type="text" class="form-control" id="direccion_entrega" disabled>
+                                            <div class="error">
+                                                <span id="direccionEntregaError"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <input class="form-control" type="number" name="cantidad" id="cantidad"
-                                    oninput="updatePrice()">
                             </div>
-                            <div class="error">
-                                <span id="medidaError"></span>
-                                <span class="ml-5" id="cantidadError"></span>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="-1" id="step3">
+                                <span class="stepper-head-icon"> 3 </span>
+                                <span class="stepper-head-text"> Time slot </span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Comentarios:</label>
-                            <textarea class="form-control" id="comentarios" rows="3"></textarea>
-                            <div class="error">
-                                <span id="comentarioError"></span>
+                            <div class="stepper-content py-3 mt-5" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Pickup time:</label><br>
+                                            <input type="datetime-local" class="form-control" id="hora_recogida">
+                                            <div class="error">
+                                                <span id="fechaRecogidaError"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Delivery time:</label><br>
+                                            <input type="datetime-local" class="form-control" id="hora_entrega">
+                                            <div class="error">
+                                                <span id="fechaEntregaError"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5 horarioAtencion text-center">
+                                    <!--<p class="horarios-toggle btn btn-secondary">Service hours</p>-->
+                                    <div class="opening-hour">
+                                        <h4 class="text-center">Service hours:</h4>
+                                        <span class="text-center">Monday to Friday: 8:00 a.m. to 8:00 p.m.</span>
+                                        <p class="text-center">Saturday: 8:00 a.m. to 2:00 p.m.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2>Direccion</h2>
-
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="-1" id="step3">
+                                <span class="stepper-head-icon"> 4 </span>
+                                <span class="stepper-head-text"> Comment </span>
+                            </div>
+                            <div class="stepper-content py-3 mt-5" style="display: none;">
+                                <div class="form-group">
+                                    <label>Any comment concerning the order:</label>
+                                    <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                                    <div class="error">
+                                        <span id="comentarioError"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="stepper-step stepper-completed">
+                            <div class="stepper-head" tabindex="-1" id="step4">
+                                <span class="stepper-head-icon"> 5 </span>
+                                <span class="stepper-head-text"> Information </span>
+                            </div>
+                            <div class="stepper-content py-3 mt-5" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h2>Contact information</h2>
+                                        <div class="form-group">
+                                            <label for="phone">Phone</label><br>
+                                            <input class="form-control" type="text" name="phone" id="phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label><br>
+                                            <input class="form-control" type="email" name="email" id="email">
+                                            <div class="error">
+                                                <span id="contactoError"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <h2>Payment method</h2>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="paimentMethod"
+                                                id="efectivo" value="3">
+                                            <label class="form-check-label" for="efectivo">Cash</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="paimentMethod"
+                                                id="transferencia" value="4">
+                                            <label class="form-check-label" for="transferencia">Transfer</label>
+                                        </div>
+                                        <div class="error">
+                                            <span id="metodoPagoError"></span>
+                                        </div>
+                                        <div class="mt-5">
+                                            <input type="button" class="btn btn-primary col" onclick="validateForm()"
+                                                value="Wash it">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="direccion_recogida">Direccion de recogida:</label><br>
-                            <input type="text" class="form-control" id="direccion_recogida">
-                            <input class="form-check-input" type="checkbox" name="sameAddress" id="sameAddress" checked
-                                onclick="toggleDireccionEntrega()">
-                            <label for="sameAddress">La direccion de recogida y entrega son la misma</label>
-                            <div class="error">
-                                <span id="direccionRecogidaError"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="direccion_entrega">Direccion de entrega:</label><br>
-                            <input type="text" class="form-control" id="direccion_entrega" disabled>
-                            <div class="error">
-                                <span id="direccionEntregaError"></span>
-                            </div>
-                        </div>
+                    <div class="col">
+                        <h3 id="totalPrice" class="mr-5 " style="float: right; text-align: right; margin-right: 5%;">
+                            Total:
+                            $0</h3>
                     </div>
                 </div>
-
-                <h2>Horarios</h2>
-                <div class="row mt-2">
-                    <div class="col form-group">
-                        <label>Hora de recogida:</label><br>
-                        <input type="datetime-local" class="form-control" id="hora_recogida">
-                        <div class="error">
-                            <span id="fechaRecogidaError"></span>
-                        </div>
-                    </div>
-                    <div class="col form-group">
-                        <label>Hora de entrega:</label><br>
-                        <input type="datetime-local" class="form-control" id="hora_entrega">
-                        <div class="error">
-                            <span id="fechaEntregaError"></span>
-                        </div>
-                    </div>
-                    <div class="col-3 horarioAtencion text-center">
-                        <p class="horarios-toggle btn btn-secondary">Horarios de atención</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Datos de contacto</h2>
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label><br>
-                            <input class="form-control" type="text" name="phone" id="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-Mail</label><br>
-                            <input class="form-control" type="email" name="email" id="email">
-                            <div class="error">
-                                <span id="contactoError"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 pl-5 mt-4 text-center">
-                        <h2>Método de pago</h2>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="paimentMethod" id="efectivo" value="3">
-                            <label class="form-check-label" for="efectivo">Efectivo</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="paimentMethod" id="transferencia"
-                                value="4">
-                            <label class="form-check-label" for="transferencia">Transferencia</label>
-                        </div>
-                        <div class="error">
-                            <span id="metodoPagoError"></span>
-                        </div>
-                        <div class="col-md-10 mt-3 row pagar">
-                            <h3 class="col" id="totalPrice">Total: $0</h3>
-                            <input type="button" class="btn btn-primary col" onclick="validateForm()" value="A lavar">
-                        </div>
-                    </div>
-                </div>
-            </form>
+            </div>
+            <div class="mt-5 row justify-content-center">
+                <button id="prev-button" class="col-2 btn btn-primary btn-lg">Previous</button>
+                <button id="next-button" class="col-2 btn btn-secondary btn-lg">Next</button>
+            </div>
         </div>
+
     </main>
 
     <footer id="footer-container"></footer>

@@ -1,70 +1,76 @@
 function validarFechas() {
-  // Obtener las fechas del formulario
-  var fechaInicio = new Date(document.getElementById('hora_recogida').value);
-  var fechaFin = new Date(document.getElementById('hora_entrega').value);
+  // Get the dates from the form
+  var startDate = new Date(document.getElementById('hora_recogida').value);
+  var endDate = new Date(document.getElementById('hora_entrega').value);
 
   var now = new Date();
-  var fechaMinima = new Date(now.getTime() + 15 * 60000);
-  var tiempoDeLavado = new Date(fechaInicio.getTime() + 7 * 3600000);
+  var minimumDate = new Date(now.getTime() + 15 * 60000);
+  var washTime = new Date(startDate.getTime() + 7 * 3600000);
 
-  var diaInicio = fechaInicio.getDay();
-  var horaInicio = fechaInicio.getHours();
-  var diaFin = fechaFin.getDay();
-  var horaFin = fechaFin.getHours();
+  var startDay = startDate.getDay();
+  var startHour = startDate.getHours();
+  var endDay = endDate.getDay();
+  var endHour = endDate.getHours();
 
-  // Obtener los errores
-  var fechaInicioError = document.getElementById('fechaRecogidaError');
-  var fechaFinError = document.getElementById('fechaEntregaError');
+  // Get the error elements
+  var startDateError = document.getElementById('fechaRecogidaError');
+  var endDateError = document.getElementById('fechaEntregaError');
 
-  var errorInicio = false;
-  var errorFin = false;
+  var startError = false;
+  var endError = false;
 
-  // Validación de fechas
-  // Debio haberse hecho con un input de tipo date, pero no se pudo por problemas de compatibilidad
-  if (fechaInicio == 'Invalid Date') {
-    errorInicio = true;
-    fechaInicioError.innerHTML = 'Introduzca una fecha de recogida';
-  } else if (fechaInicio < fechaMinima) {
-    errorInicio = true;
-    fechaInicioError.innerHTML = 'La fecha de recogida debe ser al menos 15 minutos después de la fecha actual';
-  } else if (horaInicio < 8 || horaInicio >= 20) {    // Lunes a viernes, fuera de horario
-    errorInicio = true;
-    fechaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
-  } else if (diaInicio === 6 && (horaInicio < 8 || horaInicio >= 14)) { // Sábado, fuera de horario
-    errorInicio = true;
-    fechaInicioError.innerHTML = 'La hora de recogida debe ser entre las 8:00 y las 14:00 los sábados ->';
-  } else if (diaInicio === 0) { // Domingo
-    errorInicio = true;
-    fechaInicioError.innerHTML = 'No se puede recoger los domingos';
+  // Date validation
+  // It should have been done with an input of type date, but it couldn't be done due to compatibility issues
+  if (startDate == 'Invalid Date') {
+    startError = true;
+    startDateError.innerHTML = 'Please enter a pickup date';
+  } else if (startDate < minimumDate) {
+    startError = true;
+    startDateError.innerHTML = 'The pickup date must be at least 15 minutes after the current date';
+  } else if (startHour < 8 || startHour >= 20) { // Weekdays, outside of business hours
+    startError = true;
+    startDateError.innerHTML = 'The pickup time must be between 8:00 and 20:00 on weekdays ->';
+  } else if (startDay === 6 && (startHour < 8 || startHour >= 14)) { // Saturday, outside of business hours
+    startError = true;
+    startDateError.innerHTML = 'The pickup time must be between 8:00 and 14:00 on Saturdays ->';
+  } else if (startDay === 0) { // Sunday
+    startError = true;
+    startDateError.innerHTML = 'Pickup is not available on Sundays';
   }
 
-  if (fechaFin == 'Invalid Date') {
-    errorFin = true;
-    fechaFinError.innerHTML = 'Introduzca una fecha de entrega';
-  } else if (fechaFin <= tiempoDeLavado) {
-    errorFin = true;
-    fechaFinError.innerHTML = 'La fecha de entrega debe ser al menos 7 horas después de la fecha de recogida';
-  } else if (horaFin < 8 || horaFin >= 20) {    // Lunes a viernes, fuera de horario
-    errorFin = true;
-    horaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 20:00 lunes a viernes ->';
-  } else if (diaFin === 6 && (horaFin < 8 || horaFin >= 14)) { // Sábado, fuera de horario
-    errorFin = true;
-    fechaFinError.innerHTML = 'La hora de entrega debe ser entre las 8:00 y las 14:00 los sábados ->';
-  } else if (diaFin === 0) { // Domingo
-    errorFin = true;
-    fechaFinError.innerHTML = 'No se puede entregar los domingos';
+  if (endDate == 'Invalid Date') {
+    endError = true;
+    endDateError.innerHTML = 'Please enter a delivery date';
+  } else if (endDate <= washTime) {
+    endError = true;
+    endDateError.innerHTML = 'The delivery date must be at least 7 hours after the pickup date';
+  } else if (endHour < 8 || endHour >= 20) { // Weekdays, outside of business hours
+    endError = true;
+    endDateError.innerHTML = 'The delivery time must be between 8:00 and 20:00 on weekdays ->';
+  } else if (endDay === 6 && (endHour < 8 || endHour >= 14)) { // Saturday, outside of business hours
+    endError = true;
+    endDateError.innerHTML = 'The delivery time must be between 8:00 and 14:00 on Saturdays ->';
+  } else if (endDay === 0) { // Sunday
+    endError = true;
+    endDateError.innerHTML = 'Delivery is not available on Sundays';
   }
 
-  if (!errorInicio) {
-    fechaInicioError.innerHTML = '';
+  if (!startError) {
+    startDateError.innerHTML = '';
   }
 
-  if (!errorFin) {
-    fechaFinError.innerHTML = '';
+  if (!endError) {
+    endDateError.innerHTML = '';
   }
 
-  return errorInicio || errorFin;
+  return startError || endError;
 }
+
+
+
+
+
+
 
 function validateForm() {
 
@@ -89,7 +95,7 @@ function validateForm() {
   var contactoError = document.getElementById('contactoError');
   var metodoPagoError = document.getElementById('metodoPagoError');
 
-  
+
   //verificar la fechas
   error = validarFechas();
 
@@ -224,20 +230,6 @@ function validateForm() {
 
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  var horariosToggle = document.querySelector('.horarios-toggle');
-
-  horariosToggle.addEventListener('mouseover', function () {
-    //change text of element
-    horariosToggle.innerHTML = 'Lunes a Viernes <br> 8:00 a 20:00 <br> Sábados <br> 8:00 a 14:00';
-
-  });
-  horariosToggle.addEventListener('mouseout', function () {
-    horariosToggle.innerHTML = 'Ver horarios de atencion';
-  });
-
-});
-
 function toggleDireccionEntrega() {
   const sameAddressCheckbox = document.getElementById('sameAddress');
   const direccionEntregaInput = document.getElementById('direccion_entrega');
@@ -282,3 +274,54 @@ function formatTime(date) {
 
   return hours + ':' + minutes;
 }
+
+// JavaScript code for stepper navigation
+const nextButton = document.getElementById('next-button');
+const prevButton = document.getElementById('prev-button');
+const stepperSteps = document.querySelectorAll('.stepper-step');
+const stepperHeads = document.querySelectorAll('.stepper-head');
+let currentStep = 0;
+
+function showStep(stepIndex) {
+  stepperSteps.forEach((step, index) => {
+    if (index === stepIndex) {
+      step.classList.add('stepper-active');
+      step.querySelector('.stepper-content').style.display = 'block';
+    } else {
+      step.classList.remove('stepper-active');
+      step.querySelector('.stepper-content').style.display = 'none';
+    }
+  });
+}
+
+function handleClick(event) {
+  const clickedStep = event.target.closest('.stepper-head');
+  if (clickedStep) {
+    const stepIndex = Array.from(stepperHeads).indexOf(clickedStep);
+    showStep(stepIndex);
+    currentStep = stepIndex;
+  }
+}
+
+nextButton.addEventListener('click', () => {
+  currentStep++;
+  if (currentStep >= stepperSteps.length) {
+    currentStep = stepperSteps.length - 1;
+  }
+  showStep(currentStep);
+});
+
+prevButton.addEventListener('click', () => {
+  currentStep--;
+  if (currentStep < 0) {
+    currentStep = 0;
+  }
+  showStep(currentStep);
+});
+
+stepperHeads.forEach((head) => {
+  head.addEventListener('click', handleClick);
+});
+
+// Display the initial step
+showStep(currentStep);

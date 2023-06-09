@@ -47,6 +47,26 @@
       "time": "06/06/2023 18:50:41",
       "solved": true,
       "id": 2
+    },
+    {
+      "subject": "Reset Password",
+      "order": null,
+      "comment": "Employee ID: 1234 needs to reset his password",
+      "name": "Employee",
+      "email": "12345",
+      "time": "06/06/2023 19:06:27",
+      "solved": false,
+      "id": 3
+    },
+    {
+      "subject": "Reset Password",
+      "order": null,
+      "comment": "Employee ID: 1234 needs to reset his password",
+      "name": "Employee",
+      "email": "test@gmail.com",
+      "time": "06/06/2023 19:09:45",
+      "solved": false,
+      "id": 4
     }
   ],
   "orders": [
@@ -137,6 +157,50 @@
         "time": ""
       },
       "id": 2
+    },
+    {
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "cubrecamas",
+      "wash_type": "agua fria",
+      "comment": "Test beauty",
+      "collection_date": "2023-6-12",
+      "collection_time": "18:9",
+      "collection_address": "76 Rue du 8 Mai 1945",
+      "delivery_address": "76 Rue du 8 Mai 1945",
+      "delivery_date": "2023-6-15",
+      "delivery_time": "18:9",
+      "payment_method": "tarjeta",
+      "phone": "0783133280",
+      "email": "nathan.nowakowski@insa-lyon.fr",
+      "price": 10,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 3
     }
   ]
 }

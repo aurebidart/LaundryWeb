@@ -23,6 +23,8 @@ function resetPassword() {
             if (respuesta.ok) {
                 return respuesta.json();
             } else {
+                
+                alert("Error al enviar el formulario.");
                 throw "Error en la llamada Ajax";
             }
         }
@@ -34,6 +36,7 @@ function resetPassword() {
         )
         .catch(function (err) {
             console.log(err);
+            alert("Error al enviar el formulario.");
         }
         );
     }
