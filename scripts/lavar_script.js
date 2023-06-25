@@ -1,4 +1,53 @@
-function validarFechas() {
+function validateClothes() {
+  var error = false;
+  var medida = document.getElementsByName('medida');
+  var cantidad = document.getElementById('cantidad').value;
+  var medidaError = document.getElementById('medidaError');
+  var cantidadError = document.getElementById('cantidadError');
+  if (!(medida[0].checked || medida[1].checked)) {  //si no se selecciono ninguna medida
+    medidaError.innerHTML = 'Seleccione una medida';
+    error = true;
+  } else {
+    medidaError.innerHTML = '';
+  }
+  if (cantidad < 0 || cantidad == "" || cantidad == null) {
+    cantidadError.innerHTML = 'Introduzca una cantidad';
+    error = true;
+  }
+  else if (cantidad > 100) {
+    cantidadError.innerHTML = 'La cantidad máxima es 100';
+    error = true;
+  } else {
+    cantidadError.innerHTML = '';
+  }
+  return !error;
+}
+
+function validateAddress() {
+  var error = false;
+  var direccionRecogida = document.getElementById('direccion_recogida').value;
+  var direccionEntrega = document.getElementById('direccion_entrega').value;
+  var sameAddress = document.getElementById('sameAddress').checked;
+  var direccionRecogidaError = document.getElementById('direccionRecogidaError');
+  var direccionEntregaError = document.getElementById('direccionEntregaError');
+  if (direccionRecogida == '') {
+    direccionRecogidaError.innerHTML = 'Introduzca una dirección';
+    error = true;
+  } else {
+    direccionRecogidaError.innerHTML = '';
+  }
+  if (!sameAddress) {
+    if (direccionEntrega == '') {
+      direccionEntregaError.innerHTML = 'Introduzca una dirección';
+      error = true;
+    } else {
+      direccionEntregaError.innerHTML = '';
+    }
+  }
+  return !error;
+}
+
+function validateDates() {
   // Get the dates from the form
   var startDate = new Date(document.getElementById('hora_recogida').value);
   var endDate = new Date(document.getElementById('hora_entrega').value);
@@ -63,71 +112,29 @@ function validarFechas() {
     endDateError.innerHTML = '';
   }
 
-  return startError || endError;
+  return !(startError || endError);
 }
 
-
-
-
-
-
-
-function validateForm() {
-
+function validateComments() {
   var error = false;
-  // Obtener los campos del formulario
-  var medida = document.getElementsByName('medida');
-  var cantidad = document.getElementById('cantidad').value;
   var comentarios = document.getElementById('comentarios').value;
-  var direccionRecogida = document.getElementById('direccion_recogida').value;
-  var direccionEntregaCampo = document.getElementById('direccion_entrega');
-  var direccionEntrega = document.getElementById('direccion_entrega').value;
-  var phone = document.getElementById('phone').value;
-  var email = document.getElementById('email').value;
-  var metodoPago = document.getElementsByName('paimentMethod');
-
-  //Obtener los campos errores
-  var medidaError = document.getElementById('medidaError');
-  var cantidadError = document.getElementById('cantidadError');
   var comentariosError = document.getElementById('comentarioError');
-  var direccionRecogidaError = document.getElementById('direccionRecogidaError');
-  var direccionEntregaError = document.getElementById('direccionEntregaError');
-  var contactoError = document.getElementById('contactoError');
-  var metodoPagoError = document.getElementById('metodoPagoError');
-
-
-  //verificar la fechas
-  error = validarFechas();
-
-  //Validar campos requeridos
-  if (!(medida[0].checked || medida[1].checked)) {  //si no se selecciono ninguna medida
-    medidaError.innerHTML = 'Seleccione una medida';
-    error = true;
-  } else {
-    medidaError.innerHTML = '';
-  }
-  if (cantidad < 0 || cantidad == "" || cantidad == null) {
-    cantidadError.innerHTML = 'Introduzca una cantidad';
-    error = true;
-  }
-  else if (cantidad > 100) {
-    cantidadError.innerHTML = 'La cantidad máxima es 100';
-    error = true;
-  } else {
-    cantidadError.innerHTML = '';
-  }
   if (comentarios.length > 1000) {
     comentariosError.innerHTML = 'El comentario debe tener menos de 1000 caracteres';
     error = true;
   } else {
     comentariosError.innerHTML = '';
   }
-  if (direccionRecogida == '') {
-    direccionRecogidaError.innerHTML = 'Introduzca una dirección';
-    error = true;
-  } else {
-    direccionRecogidaError.innerHTML = '';
-  }
+  return !error;
+}
+
+function validateInformation() {
+  var error = false;
+  var phone = document.getElementById('phone').value;
+  var email = document.getElementById('email').value;
+  var metodoPago = document.getElementsByName('paimentMethod');
+  var contactoError = document.getElementById('contactoError');
+  var metodoPagoError = document.getElementById('metodoPagoError');
   if (phone == '' && email == '') {
     contactoError.innerHTML = 'Introduzca un telefono o correo';
     error = true;
@@ -140,23 +147,86 @@ function validateForm() {
   } else {
     metodoPagoError.innerHTML = '';
   }
+  return !error;
+}
 
-  //verificar la direccion de entrega
-  if (!document.getElementById('sameAddress').checked) {
-    if (direccionEntrega == '') {
-      direccionEntregaError.innerHTML = 'Introduzca una dirección';
-      error = true;
-    } else {
-      direccionEntregaError.innerHTML = '';
-    }
+
+function validateForm() {
+
+  var stepperHeads = document.querySelectorAll('.stepper-head');
+  //array of errors
+  var error = new Array(5).fill(false);
+
+  if (validateClothes()) {
+    stepperHeads[0].classList.remove('stepper-invalid');
+    stepperHeads[0].classList.add('stepper-completed');
+    error[0] = false;
   } else {
-    direccionEntrega = direccionRecogida;
-    //en campo input de direccion de entrega es direccion de recogida
-    direccionEntregaCampo.value = direccionEntrega;
+    stepperHeads[0].classList.remove('stepper-completed');
+    stepperHeads[0].classList.add('stepper-invalid');
+    error[0] = true;
   }
 
-  //si todo esta bien, crear un json y enviarlo
-  if (!error) {
+  if (validateAddress()) {
+    stepperHeads[1].classList.remove('stepper-invalid');
+    stepperHeads[1].classList.add('stepper-completed');
+    error[1] = false;
+  } else {
+    stepperHeads[1].classList.remove('stepper-completed');
+    stepperHeads[1].classList.add('stepper-invalid');
+    error[1] = true;
+  }
+
+  if (validateDates()) {
+    stepperHeads[2].classList.remove('stepper-invalid');
+    stepperHeads[2].classList.add('stepper-completed');
+    error[2] = false;
+  } else {
+    stepperHeads[2].classList.remove('stepper-completed');
+    stepperHeads[2].classList.add('stepper-invalid');
+    error[2] = true;
+  }
+
+  if (validateComments()) {
+    stepperHeads[3].classList.remove('stepper-invalid');
+    stepperHeads[3].classList.add('stepper-completed');
+    error[3] = false;
+  } else {
+    stepperHeads[3].classList.remove('stepper-completed');
+    stepperHeads[3].classList.add('stepper-invalid');
+    error[3] = true;
+  }
+
+  if (validateInformation()) {
+    stepperHeads[4].classList.remove('stepper-invalid');
+    stepperHeads[4].classList.add('stepper-completed');
+    error[4] = false;
+  } else {
+    stepperHeads[4].classList.remove('stepper-completed');
+    stepperHeads[4].classList.add('stepper-invalid');
+    error[4] = true;
+  }
+
+  //return to the error tab
+  for (var i = 0; i < error.length; i++) {
+    if (error[i]) {
+      showStep(i);
+      break;
+    }
+  }
+
+  if (!(error[0] || error[1] || error[2] || error[3] || error[4])) {
+
+    // Obtener los campos del formulario
+    var medida = document.getElementsByName('medida');
+    var cantidad = document.getElementById('cantidad').value;
+    var comentarios = document.getElementById('comentarios').value;
+    var direccionRecogida = document.getElementById('direccion_recogida').value;
+    var direccionEntregaCampo = document.getElementById('direccion_entrega');
+    var direccionEntrega = document.getElementById('direccion_entrega').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+    var metodoPago = document.getElementsByName('paimentMethod');
 
     //crear json
     var json = {};
@@ -226,7 +296,6 @@ function validateForm() {
       });
   };
   console.log(json);
-
 
 }
 
@@ -308,7 +377,7 @@ nextButton.addEventListener('click', () => {
   if (currentStep >= stepperSteps.length) {
     currentStep = stepperSteps.length - 1;
   }
-  showStep(currentStep);
+  showStep(currentStep); h
 });
 
 prevButton.addEventListener('click', () => {

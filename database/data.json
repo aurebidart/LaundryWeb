@@ -201,6 +201,314 @@
         "time": ""
       },
       "id": 3
+    },
+    {
+      "metric": "kg",
+      "quantity": "45",
+      "clothe_type": "traje",
+      "wash_type": "en seco",
+      "comment": "",
+      "collection_date": "2023-6-16",
+      "collection_time": "17:5",
+      "collection_address": "asdfghjkl 456",
+      "delivery_address": "asdfghjkl 456",
+      "delivery_date": "2023-6-19",
+      "delivery_time": "18:9",
+      "payment_method": "tarjeta",
+      "phone": "3456789",
+      "email": "",
+      "price": 225,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 4
+    },
+    {
+      "metric": "pieza",
+      "quantity": "85",
+      "clothe_type": "diara",
+      "wash_type": "agua fria",
+      "comment": "",
+      "collection_date": "2023-6-28",
+      "collection_time": "8:56",
+      "collection_address": "gfhdjsk;LMXAENVILUG AN;WLISGWHIEAK SG",
+      "delivery_address": "",
+      "delivery_date": "2023-6-30",
+      "delivery_time": "9:0",
+      "payment_method": "tarjeta",
+      "phone": "1234567890",
+      "email": "",
+      "price": 85,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 5
+    },
+    {
+      "metric": "kg",
+      "quantity": "12",
+      "clothe_type": "diara",
+      "wash_type": "agua caleinte",
+      "comment": "",
+      "collection_date": "NaN-NaN-NaN",
+      "collection_time": "NaN:NaN",
+      "collection_address": "",
+      "delivery_address": "",
+      "delivery_date": "NaN-NaN-NaN",
+      "delivery_time": "NaN:NaN",
+      "payment_method": "efectivo",
+      "phone": "3456789",
+      "email": "",
+      "price": 60,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 6
+    },
+    {
+      "metric": "kg",
+      "quantity": "7",
+      "clothe_type": "diara",
+      "wash_type": "agua caleinte",
+      "comment": "",
+      "collection_date": "NaN-NaN-NaN",
+      "collection_time": "NaN:NaN",
+      "collection_address": "",
+      "delivery_address": "",
+      "delivery_date": "NaN-NaN-NaN",
+      "delivery_time": "NaN:NaN",
+      "payment_method": "tarjeta",
+      "phone": "",
+      "email": "",
+      "price": 35,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 7
+    },
+    {
+      "metric": "kg",
+      "quantity": "8",
+      "clothe_type": "diara",
+      "wash_type": "agua caleinte",
+      "comment": "",
+      "collection_date": "2023-6-28",
+      "collection_time": "10:22",
+      "collection_address": "hhh",
+      "delivery_address": "",
+      "delivery_date": "2023-7-26",
+      "delivery_time": "10:10",
+      "payment_method": "efectivo",
+      "phone": "",
+      "email": "2",
+      "price": 40,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 8
+    },
+    {
+      "metric": "kg",
+      "quantity": "2",
+      "clothe_type": "diara",
+      "wash_type": "agua caleinte",
+      "comment": "",
+      "collection_date": "2023-6-27",
+      "collection_time": "10:10",
+      "collection_address": "123",
+      "delivery_address": "",
+      "delivery_date": "2023-7-26",
+      "delivery_time": "10:10",
+      "payment_method": "efectivo",
+      "phone": "o",
+      "email": "",
+      "price": 10,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 9
+    },
+    {
+      "metric": "pieza",
+      "quantity": "12",
+      "clothe_type": "diara",
+      "wash_type": "agua caleinte",
+      "comment": "",
+      "collection_date": "2023-10-17",
+      "collection_time": "10:10",
+      "collection_address": "12",
+      "delivery_address": "",
+      "delivery_date": "2024-10-10",
+      "delivery_time": "10:10",
+      "payment_method": "efectivo",
+      "phone": "12",
+      "email": "",
+      "price": 12,
+      "status": 0,
+      "collection": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "wash": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "dry": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "iron": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "delivery": {
+        "employee": "",
+        "date": "",
+        "time": ""
+      },
+      "id": 10
     }
   ]
 }
